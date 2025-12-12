@@ -220,7 +220,7 @@ a:hover {
     /* Box shadow untuk depth */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     /* Padding vertikal */
-    padding: var(--spacing-md) 0;
+    padding: var(--spacing-sm) 0;
 }
 
 /* Navbar container flex layout */
@@ -435,6 +435,36 @@ a:hover {
 }
 
 @media (max-width: 480px) {
+    .navbar {
+
+        max-height: 50%;
+        padding: 0 0;
+    }
+
+    .logo {
+    /* Font size besar */
+    font-size: var(--font-size-xl);
+    /* Font weight bold */
+    font-weight: 700;
+    /* Color primary */
+    color: var(--secondary-color);
+    }
+    .logo-row {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        margin: var(--spacing-lg);
+    }
+
+    .logo-pic {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+
     /* show hamburger */
     .nav-toggle { display: flex; align-items: center; justify-content: center; }
 
