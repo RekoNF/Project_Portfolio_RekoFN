@@ -1451,7 +1451,7 @@ a:hover {
     /* Background color white */
     background-color: var(--secondary-color);
     /* Border radius */
-    border-radius: 0 0px 50px 50px;
+    border-radius: 50px;
     /* Box shadow */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     /* Overflow auto untuk scrollbar jika gambar lebar */
@@ -1478,6 +1478,32 @@ a:hover {
     /* Border radius */
     border-radius: 75px;
 }
+
+/* ========================================
+   REFLECTION SECTION STYLES
+   ======================================== */
+
+.reflection-of-end{
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    width: 100%;
+    height: auto;
+    margin-top: -8px;
+    border-radius: 0px;
+    padding: var(--spacing-2xl);
+}
+.reflection-of-end h2 {
+    /* Text align center */
+    text-align: center;
+    /* Margin bottom spacing */
+}
+.section-reflection-desc {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #F4F4F4;
+    font-weight: var(--font-weight-medium);
+}
+
 
 /* ========================================
    CONTACT SECTION STYLES
