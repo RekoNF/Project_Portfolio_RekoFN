@@ -1498,11 +1498,14 @@ a:hover {
     /* Margin bottom spacing */
 }
 .section-reflection-desc {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #F4F4F4;
-    font-weight: var(--font-weight-medium);
+    text-align: justify;
 }
+
+.section-reflection-desc p{
+    font-size: 25px;
+    color: var(--bg-color);
+    font-weight: var(--font-weight-medium);
+} 
 
 
 /* ========================================
