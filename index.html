@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Deklarasi charset UTF-8 untuk mendukung karakter Indonesia -->
+    <meta charset="UTF-8">
+    <!-- Meta viewport untuk responsive design pada mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Judul website yang ditampilkan di browser tab -->
+    <title>Portofolio Saya - Reko</title>
+    <!-- Mengimpor file CSS utama untuk styling -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/Prjct ONI.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/Prjct ONI.png">
+    <meta name="theme-color" content="#FF7315">
+</head>
+<body>
+    <!-- Header/Navigation Bar -->
+    <header class="navbar">
+        <!-- Container untuk navbar agar responsive -->
+        <div class="container nav-container">
+            <!-- Logo/Nama brand -->
+            <div class="logo-row">
+                <img src="assets/logo/Prjct ONI.png" alt="Foto Reko" class="logo-pic">
+                <div class="logo">MAREKO.co</div>
+            </div>
+            <!-- Bagian yang dirubah:  Hamburger toggle button di navbar -->
+
+            <!-- Hamburger toggle untuk mobile -->
+            <!-- PERUBAHAN: mengganti simple hamburger span dengan SVG icon yang menarik -->
+            <!-- Bagian yang dirubah:  Hamburger toggle button di navbar -->
+
+            <!-- Hamburger toggle untuk mobile -->
+            <!-- PERUBAHAN: Ganti dengan SVG icon hamburger yang baru + icon X untuk state open -->
+            <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- SVG Icon Hamburger (close state) - tampil saat menu TUTUP -->
+                <!-- Penjelasan: Icon ini memiliki garis-garis dengan panjang berbeda (simple, modern style) -->
+                <svg class="hamburger-icon hamburger-closed" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="28" 
+                    height="28" 
+                    viewBox="0 0 24 24">
+                    <title>Open Menu</title>
+                    <!-- path ini adalah garis-garis hamburger dari SVG yang Anda berikan -->
+                    <path fill="none" 
+                        stroke="currentColor" 
+                        stroke-linecap="round" 
+                        stroke-width="1.5" 
+                        d="M4 7h3m13 0h-9m9 10h-3M4 17h9m-9-5h16"/>
+                </svg>
+                
+                <!-- SVG Icon X / Close (open state) - tampil saat menu BUKA -->
+                <!-- Penjelasan: Icon X sederhana yang tampil saat menu dibuka, untuk menutup menu kembali -->
+                <svg class="hamburger-icon hamburger-open" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="28" 
+                    height="28" 
+                    viewBox="0 0 24 24"
+                    style="display: none;">
+                    <title>Close Menu</title>
+                    <!-- Garis X pertama:  dari kiri atas ke kanan bawah -->
+                    <path fill="none"
+                        stroke="currentColor" 
+                        stroke-linecap="round" 
+                        stroke-width="1.5" 
+                        d="M6 6L18 18"/>
+                    <!-- Garis X kedua: dari kanan atas ke kiri bawah -->
+                    <path fill="none"
+                        stroke="currentColor" 
+                        stroke-linecap="round" 
+                        stroke-width="1.5" 
+                        d="M18 6L6 18"/>
+                </svg>
+            </button>
+
+            <!-- Menu navigasi -->
+            <nav id="main-nav" class="nav-menu" role="navigation">
+                <!-- Link navigasi ke setiap bagian website -->
+                <a href="#home" class="nav-link active">Beranda</a>
+                <a href="#about" class="nav-link">Tentang</a>
+                <a href="#portfolio" class="nav-link">Lecture</a>
+                <!--
+                  Mulai perubahan: mengganti satu item nav 'Dokumen' menjadi dropdown
+                  Penjelasan: elemen .nav-dropdown membungkus tombol toggle dan menu.
+                  - .dropdown-toggle adalah elemen yang diklik untuk buka/tutup submenu.
+                  - .dropdown-menu berisi link-link ke section yang diwakili (Proposal, Infografis, Lainnya).
+                  ARIA attributes ditambahkan untuk aksesibilitas.
+                -->
+                <div class="nav-item nav-dropdown" id="dokumenDropdown">
+                    <!-- tombol toggle untuk tampilkan submenu (gunakan button supaya accessible) -->
+                    <button
+                        class="dropdown-toggle nav-link"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        aria-controls="dokumen-menu"
+                        id="dokumenToggle"
+                    >
+                        Dokumen
+                        <!-- indikator panah kecil (bisa distyling di CSS) -->
+                        <span class="dropdown-caret" aria-hidden="true">▾</span>
+                    </button>
+
+                    <!-- submenu dropdown (tersimpan di DOM) -->
+                    <div class="dropdown-menu" id="dokumen-menu" role="menu" aria-labelledby="dokumenToggle">
+                        <!-- setiap link submenu mengarah ke section yang ada -->
+                        <a href="#dokumen" class="nav-link dropdown-item" role="menuitem">Proposal</a>
+                        <a href="#artikel-ilmiah" class="nav-link dropdown-item" role="menuitem">Artikel</a>
+                        <a href="#infografis" class="nav-link dropdown-item" role="menuitem">Infografis</a>
+                    </div>
+                </div>
+                <!-- end perubahan dropdown -->
+                <a href="#media" class="nav-link">Media</a>
+                <a href="#contact" class="nav-link">Kontak</a>
+            </nav>
+        </div>
+    </header>
+    <!-- overlay untuk menutup menu saat klik di luar (visible pada mobile) -->
+    <div class="nav-overlay" onclick="closeNav()" aria-hidden="true"></div>
+
+    <!-- SECTION 1: HERO/BERANDA -->
+    <section id="home" class="hero">
+        <!-- Container untuk menyelaraskan konten -->
+        <div class="container">
+            <!-- Konten utama hero section -->
+            <div class="hero-content">
+                <!-- Judul besar/heading utama -->
+                <h1>Selamat Datang di Portofolio <span class="name">MAREKO</span></h1>
+                <!-- Subtitle/deskripsi singkat -->
+                <p>Motivated and curious student with a strong interest in data science, statistics, and programming.</p>
+                <!-- Tombol call-to-action -->
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('portfolio')">Lihat Portofolio</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('contact')">Hubungi Saya</button>
+                </div>
+                <!--Social Icon Hero -->
+                <div class="hero-social-icon">
+                    <a href="https://github.com" target="_blank" aria-label="GitHub Profile" class="style-icon-hero">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 432 416" aria-hidden="true">
+                            <path fill="currentColor" d="M213.5 0q88.5 0 151 62.5T427 213q0 70-41 125.5T281 416q-14 2-14-11v-58q0-27-15-40q44-5 70.5-27t26.5-77q0-34-22-58q11-26-2-57q-18-5-58 22q-26-7-54-7t-53 7q-18-12-32.5-17.5T107 88h-6q-12 31-2 57q-22 24-22 58q0 55 27 77t70 27q-11 10-13 29q-42 18-62-18q-12-20-33-22q-2 0-4.5.5t-5 3.5t8.5 9q14 7 23 31q1 2 2 4.5t6.5 9.5t13 10.5T130 371t30-2v36q0 13-14 11q-64-22-105-77.5T0 213q0-88 62.5-150.5T213.5 0z"/>
+                        </svg>
+                    </a>
+                
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram Profile" class="style-icon-hero">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="currentColor" d="M12 0C8.74 0 8.333.015 7.053.072C5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053C.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913a5.885 5.885 0 0 0 1.384 2.126A5.868 5.868 0 0 0 4.14 23.37c.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558a5.898 5.898 0 0 0 2.126-1.384a5.86 5.86 0 0 0 1.384-2.126c.296-.765.499-1.636.558-2.913c.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913a5.89 5.89 0 0 0-1.384-2.126A5.847 5.847 0 0 0 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071c1.17.055 1.805.249 2.227.415c.562.217.96.477 1.382.896c.419.42.679.819.896 1.381c.164.422.36 1.057.413 2.227c.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 0 1-.899 1.382a3.744 3.744 0 0 1-1.38.896c-.42.164-1.065.36-2.235.413c-1.274.057-1.649.07-4.859.07c-3.211 0-3.586-.015-4.859-.074c-1.171-.061-1.816-.256-2.236-.421a3.716 3.716 0 0 1-1.379-.899a3.644 3.644 0 0 1-.9-1.38c-.165-.42-.359-1.065-.42-2.235c-.045-1.26-.061-1.649-.061-4.844c0-3.196.016-3.586.061-4.861c.061-1.17.255-1.814.42-2.234c.21-.57.479-.96.9-1.381c.419-.419.81-.689 1.379-.898c.42-.166 1.051-.361 2.221-.421c1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 1 0 0 12.324a6.162 6.162 0 1 0 0-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4s4 1.79 4 4s-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 0 1-2.88 0a1.44 1.44 0 0 1 2.88 0z"/>
+                        </svg>
+                    </a>
+
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn Profile" class="style-icon-hero">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 20 20" aria-hidden="true">
+                            <path fill="currentColor" d="M17.04 17.043h-2.962v-4.64c0-1.107-.023-2.531-1.544-2.531c-1.544 0-1.78 1.204-1.78 2.449v4.722H7.793V7.5h2.844v1.3h.039c.397-.75 1.364-1.54 2.808-1.54c3.001 0 3.556 1.974 3.556 4.545v5.238ZM4.447 6.194c-.954 0-1.72-.771-1.72-1.72s.767-1.72 1.72-1.72a1.72 1.72 0 0 1 0 3.44Zm1.484 10.85h-2.97V7.5h2.97v9.543ZM18.521 0H1.476C.66 0 0 .645 0 1.44v17.12C0 19.355.66 20 1.476 20h17.042c.815 0 1.482-.644 1.482-1.44V1.44C20 .646 19.333 0 18.518 0h.003Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: TENTANG SAYA -->
+    <section id="about" class="about">
+        <!-- Container untuk responsive layout -->
+        <div class="container">
+            <!-- Judul section -->
+            <h2>About Me</h2>
+            <!-- Grid untuk layout dua kolom -->
+            <div class="about-grid">
+                <!-- Kolom kiri: Info personal -->
+                <div class="about-info">
+                    <!-- Teks deskripsi tentang saya dan foto profil -->
+                    <div class="about-profile-row">
+                        <img src="assets/img/FOTO Pass.png" alt="Foto Reko" class="profile-pic">
+                        <div>
+                            <p>Nama saya Reko, seorang web developer dengan pengalaman dalam mengembangkan website modern dan interaktif.</p>
+                            <p>Saya seorang <span class="typed" data-typed-items="Statistics, Data Analyst, Data Scientist, Data Sampler"></span><span class="typed-cursor" aria-hidden="true"></span></p>
+                        </div>
+                    </div>
+                    <!-- List skills dengan styling khusus -->
+                    <div class="skills">
+                        <!-- Judul skills -->
+                        <h3>Keahlian</h3>
+                        <!-- Setiap skill ditampilkan dengan progress bar -->
+                        <div class="skill-item">
+                            <span>HTML & css</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Excel</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Python</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Programing R</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kolom kanan: Statistik -->
+                <div class="about-stats">
+                    <!-- Setiap stat ditampilkan dengan card -->
+                    <div class="stat-card">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Proyek Selesai</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Guru &amp; Dosen Puas</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">1+</div>
+                        <div class="stat-label">Tahun Pengalaman</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: PORTOFOLIO PROYEK -->
+    <section id="portfolio" class="portfolio">
+        <!-- Container untuk responsive layout -->
+        <div class="container">
+            <!-- Judul section -->
+            <h2>Portofolio</h2>
+            <!-- Grid untuk menampilkan kartu proyek -->
+            <div class="portfolio-grid">
+                <!-- Setiap proyek ditampilkan sebagai card -->
+                <div class="portfolio-card" onclick="openProjectModal(this)">
+                    <!-- Placeholder gambar proyek -->
+                    <div class="project-image">
+                        <img src="assets/portfolio/Pertemuan 1.png" alt="" class="project-image">
+                    </div>
+                    <!-- Judul proyek -->
+                    <h3>Pertemuan 1</h3>
+                    <!-- Deskripsi singkat -->
+                    <p>Start</p>
+                    <!-- Data tersembunyi untuk modal (diakses via JavaScript) -->
+                    <div class="hidden-data">
+                        <div class="modal-category">Pendahuluan Materi Kuliah</div>
+                        <div class="modal-description">Pengertian Dari :</div>
+                        <div class="modal-penjelasan">
+                            1. Negara = adalah warga yang ada didalamnya<br>
+                            2. Pengetahuan / Pendidikan adalah suatu kemampuan yang semua orang harus punya.<br>
+                        </div>
+                        <div class="modal-description">Tugas Selama 1 semester ini :</div>
+                        <div class="modal-penjelasan">
+                            1. Proposal<br>
+                            2. Podcast<br>
+                            3. Artikel Ilmiah<br>
+                            4. Portfolio (UAS)<br>
+                        </div>
+                        <div class="modal-tech">Menjadi warga negara yang baik berarti menjadi warga yang terdidik. Melalui tugas-tugas ini, kita sedang berlatih untuk tidak hanya "ada" di dalam negara, tetapi "berdaya" bagi negara.</div>
+                        <div class="modal-link">
+                            <object data="documents/1. Pendahuluan.pdf" type="application/pdf" width="100%" height="800">
+                            <!-- Fallback jika browser tidak support object tag -->
+                                <p>Maaf, PDF tidak bisa ditampilkan. 
+                                    <a href="documents/1. Pendahuluan.pdf"></a>
+                                </p>
+                            </object>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" onclick="openProjectModal(this)">
+                    <!-- Placeholder gambar proyek -->
+                    <div class="project-image">
+                        <img src="assets/portfolio/Pertemuan 2.png" alt="" class="project-image">
+                    </div>
+                    <!-- Judul proyek -->
+                    <h3>Pertemuan 2</h3>
+                    <!-- Deskripsi singkat -->
+                    <p>Latar Belakang pembentukan/sejarah terbentuknya Indonesia</p>
+                    <!-- Data tersembunyi untuk modal -->
+                    <div class="hidden-data">
+                        <div class="modal-category">Identitas Nasional</div>
+                        <div class="modal-description">Faktor-faktor penting yang memengaruhi pembentukan Indonesia :</div>
+                        <div class="modal-penjelasan">
+                            a. Persamaan nasib dibawah penjajahan asing<br>
+                            b. Keinginan bersama yang kuat untuk merdeka<br>
+                            c. Adanya kesatuan wilayah tempat tinggal (Nusantara)<br>
+                            d. Mempunyai cita-cita bersama sehingga terbentuknya Indonesia merdeka<br>
+                        </div>
+                        <div class="modal-tech">Faktor-faktor tersebut bersifat historis dan reaktif (muncul dari respons terhadap penjajahan), sehingga tantangan saat ini adalah mempertahankan dan merevitalisasi ikatan tersebut di era damai tanpa musuh bersama yang jelas.</div>
+                        <div class="modal-link">
+                            <object data="documents/2. Sejarah Identitas Nasional.pdf" type="application/pdf" width="100%" height="800">
+                            <!-- Fallback jika browser tidak support object tag -->
+                                <p>Maaf, PDF tidak bisa ditampilkan. 
+                                    <a href="documents/2. Sejarah Identitas Nasional.pdf"></a>
+                                </p>
+                            </object>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" onclick="openProjectModal(this)">
+                    <!-- Placeholder gambar proyek -->
+                    <div class="project-image">
+                        <img src="assets/portfolio/Pertemuan 3.png" alt="" class="project-image">
+                    </div>
+                    <!-- Judul proyek -->
+                    <h3>Pertemuan 3</h3>
+                    <!-- Deskripsi singkat -->
+                    <p>Rakyat, Hukum, Negara, Relasi kekuasaan</p>
+                    <!-- Data tersembunyi untuk modal -->
+                    <div class="hidden-data">
+                        <div class="modal-category">Segitiga RNH<br>(Rakyat, Negara, dan Hukum)</div>
+                        <div class="modal-description">Negara adalah:</div>
+                        <div class="modal-penjelasan">
+                            - Pelayan Rakyat<br>
+                            - Hukum adalah kesepakatan bersama/hukum bukan perintah penguasa<br>
+                            - Kewajiban rakyat berbasis persetujuan bersama<br>
+                        </div>
+                        <div class="modal-tech">Sebuah idealitas normatif dari negara demokrasi yang menganut prinsip kedaulatan rakyat dan supremasi hukum, di mana Negara tunduk melayani, dan Hukum adalah hasil konsensus, bukan alat opresi penguasa. Namun, dalam praktik, sering terjadi ketegangan saat Hukum digunakan sebagai instrumen politik oleh pihak yang berkuasa, mencederai prinsip kesepakatan bersama dan kewajiban berbasis persetujuan.</div>
+                        <div class="modal-link">
+                            <object data="documents/3. RHN relasi Kekuasaan.pdf" type="application/pdf" width="100%" height="800">
+                            <!-- Fallback jika browser tidak support object tag -->
+                                <p>Maaf, PDF tidak bisa ditampilkan. 
+                                    <a href="documents/3. RHN relasi Kekuasaan.pdf"></a>
+                                </p>
+                            </object>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" onclick="openProjectModal(this)">
+                    <!-- Placeholder gambar proyek -->
+                    <div class="project-image">
+                        <img src="assets/portfolio/Pertemuan 4.png" alt="" class="project-image">
+                    </div>
+                    <!-- Judul proyek -->
+                    <h3>Pertemuan 4</h3>
+                    <!-- Deskripsi singkat -->
+                    <p>Ideologi dan Falsafah Bangsa</p>
+                    <!-- Data tersembunyi untuk modal -->
+                    <div class="hidden-data">
+                        <div class="modal-category">Legitimation</div>
+                        <div class="modal-description">Ideologi merupakan gagasan sesuatu yang membentuk sebuah sistem pemikiran kita dari berbagai sudut pandang/ilmu</div>
+                        <div class="modal-penjelasan">
+                            - Ideologi Terbuka : Dinamis <br> > Penyesuaian sesuai dengan perkembangan<br>
+                            - Ideologi Tertutup : Dogmatis <br> > Kaku + tidak bisa dikritik<br>
+                        </div>
+                        <div class="modal-tech">Meskipun Ideologi Terbuka (Dinamis) secara teori menjamin adaptasi dan legitimasi yang berkelanjutan, dalam praktiknya, tidak ada ideologi yang benar-benar 100% terbuka karena setiap sistem membutuhkan inti nilai dasar yang tidak dapat diubah (dogma minimal) untuk mempertahankan identitasnya.</div>
+                        <div class="modal-link">
+                            <object data="documents/4. Ideologi dan Falsafah Bangsa.pdf" type="application/pdf" width="100%" height="800">
+                            <!-- Fallback jika browser tidak support object tag -->
+                                <p>Maaf, PDF tidak bisa ditampilkan. 
+                                    <a href="documents/4. Ideologi dan Falsafah Bangsa.pdf"></a>
+                                </p>
+                            </object>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" onclick="openProjectModal(this)">
+                    <!-- Placeholder gambar proyek -->
+                    <div class="project-image">
+                        <img src="assets/portfolio/Pertemuan 5.png" alt="" class="project-image">
+                    </div>
+                    <!-- Judul proyek -->
+                    <h3>Pertemuan 5</h3>
+                    <!-- Deskripsi singkat -->
+                    <p>Konstitusi Bangsa</p>
+                    <!-- Data tersembunyi untuk modal -->
+                    <div class="hidden-data">
+                        <div class="modal-category">Supremation of Law</div>
+                        <div class="modal-description">Hukum itu :</div>
+                        <div class="modal-penjelasan">
+                            - Penyelenggara negara dan warga negara terikat hukum tanpa terkecuali <br>
+                            - Undang-undang adalah sebuah jalan tengah <br>
+                            - Terdapatnya perlindungan HAM,pembagian kekuasaan,pemerintahan berdasar UU,<br> dan peradilan tata usaha negara.
+                        </div>
+
+                        <div class="modal-description">Konstitusi (Konstituer)</div>
+                        <div class="modal-description">Tiga Substansi dasar konstitusi Sri Soemantri</div>
+                        <div class="modal-penjelasan">
+                            - Jaminan HAM.<br>
+                            - Susunan Ketatanegaraan yang mendasar.<br>
+                            - (Tidak tercatat oleh saya)
+                        </div>
+                        <div class="modal-tech">Supremasi Hukum yang menekankan keterikatan semua pihak pada hukum dan perlindungan HAM adalah bahwa, meskipun secara normatif ideal, prinsip tersebut seringkali gagal dilaksanakan dalam praktik ketika ada intervensi kekuasaan atau kepentingan politik, yang dikenal sebagai fenomena "hukum tumpul ke atas, tajam ke bawah."</div>
+                        <div class="modal-link">
+                            <object data="documents/5. Konstitusi.pdf" type="application/pdf" width="100%" height="800">
+                            <!-- Fallback jika browser tidak support object tag -->
+                                <p>Maaf, PDF tidak bisa ditampilkan. 
+                                    <a href="documents/5. Konstitusi.pdf"></a>
+                                </p>
+                            </object>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" onclick="openProjectModal(this)">
+                    <!-- Placeholder gambar proyek -->
+                    <div class="project-image">
+                        <img src="assets/portfolio/Pertemuan 5.png" alt="" class="project-image">
+                    </div>
+                    <!-- Judul proyek -->
+                    <h3>Pertemuan 6</h3>
+                    <!-- Deskripsi singkat -->
+                    <p>Fungsi sebuah negara</p>
+                    <!-- Data tersembunyi untuk modal -->
+                    <div class="hidden-data">
+                        <div class="modal-category">Function of the Nation</div>
+                        <div class="modal-description">Fungsi Negara : </div>
+                        <div class="modal-penjelasan">
+                            - Fungsi dalam pertahanan dan perlindungan<br>
+                            - Fungsi Diplomatis<br>
+                            - Fungsi Yuridis<br>
+                            - Fungsi Administrasi<br>
+                            - Fungsi Pembangunan<br>
+                        </div>
+
+                        <div class="modal-description">Politik Kebijakan Publik (Otoritas)</div>
+                        <div class="modal-penjelasan">
+                            - Semua kebijakan diputuskan dan dilaksanakan bersama<br>
+                            - Semua ini butuh landasan-landasan etis yang kuat<br>
+                            - Dilihat dari negara ini pemerintah sekarang semua tertuju pada otoritas.
+                        </div>
+                        <div class="modal-tech">Sebuah negara ada adalah karena masyarakyatnya yang berada di dalam, di bawah naungan negara itu. Sebagai warga negara kita perlu menghormati pemerintah atau pihak berwenang lain, 
+                            di sisi lain mereka juga harus memenuhi tugas mereka dengan baik.</div>
+                        <div class="modal-link">
+                            <object data="documents/6. Fungsi dan Peran Negara.pdf" type="application/pdf" width="100%" height="800">
+                            <!-- Fallback jika browser tidak support object tag -->
+                                <p>Maaf, PDF tidak bisa ditampilkan. 
+                                    <a href="documents/6. Fungsi dan Peran Negara.pdf"></a>
+                                </p>
+                            </object>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" onclick="openProjectModal(this)">
+                    <!-- Placeholder gambar proyek -->
+                    <div class="project-image">
+                        <img src="assets/portfolio/Pertemuan 7.png" alt="" class="project-image">
+                    </div>
+                    <!-- Judul proyek -->
+                    <h3>Pertemuan 7</h3>
+                    <!-- Deskripsi singkat -->
+                    <p>Persiapan UTS pembuatan propoasql</p>
+                    <!-- Data tersembunyi untuk modal -->
+                    <div class="hidden-data">
+                        <div class="modal-category">Demokrasi <br><br></div>
+                        <div class="modal-description">Pada pertemuan ini saya dan rekan-rekan mahasaiswa membahas topik Demokrasi secara singkat. Lalu diakhiri dengan persiapan dan penjelasan pembuatan proposal dari Pak John</div>
+                        <div class="modal-tech">Masalah politik yang berujung pada kekecewaan masyarkat membuat demokrasi itu sendiri dilanggar.</div>
+                        <div class="modal-link">
+                            <object data="" type="application/pdf" width="100%" height="800">
+                            <!-- Fallback jika browser tidak support object tag -->
+                                <p>Maaf, PDF tidak bisa ditampilkan. 
+                                    <a href=""></a>
+                                </p>
+                            </object>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" onclick="openProjectModal(this)">
+                    <!-- Placeholder gambar proyek -->
+                    <div class="project-image">
+                        <img src="assets/portfolio/Pertemuan 8.png" alt="" class="project-image">
+                    </div>
+                    <!-- Judul proyek -->
+                    <h3>Pertemuan 8</h3>
+                    <!-- Deskripsi singkat -->
+                    <p>Persiapan Pembuatan Proposal</p>
+                    <!-- Data tersembunyi untuk modal -->
+                    <div class="hidden-data">
+                        <div class="modal-category">Demokrasi Part. 1 <br><br></div>
+                        <div class="modal-description">Pada pertemuan ini saya dan rekan-rekan mahasaiswa membahas topik Demokrasi secara singkat. Lalu diakhiri dengan persiapan dan penjelasan pembuatan proposal dari Pak John</div>
+                        <div class="modal-tech">Demokrasi pada tahap ini Indonesia sangat memrihatinkan, sudah banyak hal/kejadian yang membuat nama "Demokrasi" tidak ada di Indonesia.</div>
+                    </div>
+                    <div class="modal-link">
+                            <object data="" type="application/pdf" width="100%" height="800">
+                            <!-- Fallback jika browser tidak support object tag -->
+                                <p>Maaf, PDF tidak bisa ditampilkan. 
+                                    <a href=""></a>
+                                </p>
+                            </object>
+                        </div>
+                </div>
+
+                <div class="portfolio-card" onclick="openProjectModal(this)">
+                    <!-- Placeholder gambar proyek -->
+                    <div class="project-image">
+                        <img src="assets/portfolio/Pertemuan 9.png" alt="" class="project-image">
+                    </div>
+                    <!-- Judul proyek -->
+                    <h3>Pertemuan 9</h3>
+                    <!-- Deskripsi singkat -->
+                    <p>Lanjutan Pembahasan Topik Demokrasi</p>
+                    <!-- Data tersembunyi untuk modal -->
+                    <div class="hidden-data">
+                        <div class="modal-category">Demokrasi Part. 2 <br><br></div>
+                        <div class="modal-description">Memakai sistem republik</div>
+                        <div class="modal-penjelasan">
+                            - Monarki <br>
+                            - Aristokrasi <br>
+                            - Demokrasi <br>
+                        </div>
+                        <div class="modal-description">Jika kondisi sebuah negara hanya berfokus pada satu penguasa maka sistem di negara tsb. adalah monarki, <br> 
+                        Jika hanya beberapa saja 2 sampai 5 orang atau lebih disebut aristokrasi, <br> sebaliknya jika banyak terdiri dari beberapa tingkatan yang jelas serta pemimpin tidak memegang hak penuh maka kemungkinan itu adalah sistem demokraasi</div>
+                        <div class="modal-tech">Bentuk pemerintahan (Monarki, Aristokrasi, Demokrasi) berdasarkan jumlah pemegang kekuasaan, sangat tidak seimbang, tetapi reduksionisme struktural yang mengaburkan realitas politik kontemporer, di mana legitimasi kekuasaan tidak hanya didasarkan pada jumlah pemegang hak suara (demos) tetapi juga pada kualitas akuntabilitas dan distribusi kekuasaan de facto.</div>
+                        <div class="modal-link">
+                            <object data="documents/9. Demokrasi.pdf" type="application/pdf" width="100%" height="800">
+                            <!-- Fallback jika browser tidak support object tag -->
+                                <p>Maaf, PDF tidak bisa ditampilkan. 
+                                    <a href="documents/9. Demokrasi.pdf"></a>
+                                </p>
+                            </object>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" onclick="openProjectModal(this)">
+                    <!-- Placeholder gambar proyek -->
+                    <div class="project-image">
+                        <img src="assets/portfolio/Pertemuan 10.png" alt="" class="project-image">
+                    </div>
+                    <!-- Judul proyek -->
+                    <h3>Pertemuan 10</h3>
+                    <!-- Deskripsi singkat -->
+                    <p>Materi yang membahas partisipasi dari warga negara</p>
+                    <!-- Data tersembunyi untuk modal -->
+                    <div class="hidden-data">
+                        <div class="modal-category">Participation of civilians</div>
+                        <div class="modal-description">
+                            1. Spektrum Keterlibatan: Mulai dari level minimum (memberikan suara dalam Pemilu) hingga level maksimum (menjadi aktivis, kandidat politik, atau lobbying pemerintah). <br>
+
+                            2. Legitimasi Politik: Partisipasi adalah pilar utama yang memberikan legitimasi pada sistem demokrasi dan keputusan yang dihasilkan. <br>
+
+                            3. Responsivitas Negara: Partisipasi menjadi mekanisme bagi rakyat untuk menuntut akuntabilitas dan memastikan bahwa kebijakan negara responsif terhadap kebutuhan publik. <br>
+
+                            4. Budaya Politik: Mencerminkan sejauh mana warga negara merasa memiliki efficacy (kemampuan untuk mempengaruhi) dan trust (kepercayaan) terhadap sistem politik mereka.
+                        </div>
+                        <div class="modal-tech">
+                            Partisipasi politik sering kali tidak merata dan cenderung didominasi oleh kelompok yang memiliki sumber daya (pendidikan, uang, akses informasi), menciptakan kesenjangan partisipasi yang melemahkan prinsip kesetaraan politik. Partisipasi yang tinggi secara kuantitas (misalnya, angka pemilih tinggi) tidak selalu berarti partisipasi yang berkualitas jika tidak dibarengi dengan partisipasi substantif (pemahaman isu dan kemampuan mempengaruhi kebijakan).
+                        </div>
+                        <div class="modal-link">
+                            <object data="" type="application/pdf" width="100%" height="800">
+                            <!-- Fallback jika browser tidak support object tag -->
+                                <p>Maaf, PDF tidak bisa ditampilkan. 
+                                    <a href=""></a>
+                                </p>
+                            </object>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" onclick="openProjectModal(this)">
+                    <!-- Placeholder gambar proyek -->
+                    <div class="project-image">
+                        <img src="assets/portfolio/Pertemuan 11.png" alt="" class="project-image">
+                    </div>
+                    <!-- Judul proyek -->
+                    <h3>Pertemuan 11</h3>
+                    <!-- Deskripsi singkat -->
+                    <p>Materi Multikulturalisme yang memaparkan bagaimana ideologi ini bekerja.</p>
+                    <!-- Data tersembunyi untuk modal -->
+                    <div class="hidden-data">
+                        <div class="modal-category">Multikulturalism</div>
+                        <div class="modal-description">
+                            1. Multikulturalisme adalah Ideologi Kesederajatan: Didefinisikan sebagai ideologi yang mengakui dan mengagungkan perbedaan dalam kesederajatan , sekaligus menekankan penerimaan terhadap realitas yang beragam. <br>
+
+                            2. Keanekaragaman Jenis (Spektrum Implementasi): Konsep ini memiliki lima jenis implementasi, mulai dari yang terpisah (Isolasionis) hingga yang bertujuan menghapus batasan (Kosmopolitan). <br>
+
+                            3. Gagalnya Monokulturalisme (Konteks Historis): Konsep ini muncul sebagai solusi pasca Perang Dunia II karena upaya Monokulturalisme (kesatuan budaya) dan Asimilasi (melebur perbedaan) dinilai gagal menyatukan masyarakat.
+                        </div>
+                        <div class="modal-tech">Materi ini menyajikan multikulturalisme sebagai jawaban idealis dan pragmatis terhadap kegagalan keseragaman paksa ; namun, secara kritis, tantangan terbesarnya adalah menggeser pengakuan perbedaan ke realitas kesetaraan substansial di ranah politik dan ekonomi , terutama di Indonesia yang menghadapi ancaman Primordialisme dan bahaya sentralistik.</div>
+                        <div class="modal-link">
+                            <object data="documents/11. Multikulturalisme.pdf" type="application/pdf" width="100%" height="800">
+                            <!-- Fallback jika browser tidak support object tag -->
+                                <p>Maaf, PDF tidak bisa ditampilkan. 
+                                    <a href="documents/11. Multikulturalisme.pdf"></a>
+                                </p>
+                            </object>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-card" onclick="openProjectModal(this)">
+                    <!-- Placeholder gambar proyek -->
+                    <div class="project-image">
+                        <img src="assets/portfolio/Pertemuan 12.png" alt="" class="project-image">
+                    </div>
+                    <!-- Judul proyek -->
+                    <h3>Pertemuan 12</h3>
+                    <!-- Deskripsi singkat -->
+                    <p>UJIAN AKHIR SEMESTER</p>
+                    <!-- Data tersembunyi untuk modal -->
+                    <div class="hidden-data">
+                        <div class="modal-category">Minggu UAS</div>
+                        <div class="modal-description">Pertemuan singkat untuk membahas beberapa hal dan absen kelas.</div>
+                        <div class="modal-tech">Dengan demikian kelas PKN sudah selesai</div>
+                        <div class="modal-link">
+                            <object data="" type="application/pdf" width="100%" height="800">
+                            <!-- Fallback jika browser tidak support object tag -->
+                                <p>Maaf, PDF tidak bisa ditampilkan. 
+                                    <a href=""></a>
+                                </p>
+                            </object>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: CURRICULUM VITAE / DOKUMEN -->
+    <section id="dokumen" class="dokumen">
+        <!-- Container untuk responsive layout -->
+        <div class="container">
+            <!-- Judul section -->
+            <h2>PROPOSAL PKN </h2>
+            <!-- Deskripsi section -->
+            <p class="section-desc">Proposal Analisa Kekurangan Sistem Pendidikan di Indonesia untuk <br> Mengembangkan Kualitas Pendidikan Warga Negara yang Lebih Baik</p>
+            
+            <!-- Embed PDF Container -->
+            <div class="proposal-viewer-container">
+                <!-- PDF embed menggunakan PDF.js atau object tag -->
+                <!-- Pastikan file cv.pdf sudah ada di folder documents/ -->
+                <object data="documents/PROPOSAL_PKn_MU[1].pdf" type="application/pdf" width="100%" height="800">
+                    <!-- Fallback jika browser tidak support object tag -->
+                    <p>Maaf, PDF tidak bisa ditampilkan. 
+                        <a href="documents/PROPOSAL_PKn_MU[1].pdf"></a>
+                    </p>
+                </object>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: MEDIA - SINGLE YOUTUBE EMBED -->
+    <section id="media" class="media">
+        <div class="container">
+            <h2>Hasil Podcast</h2>
+            <h3>Narasumber : Pak Jacob</h3>
+            <p>Beliau adalah seorang Dosen dengan spesialisasi logika dan ilmu matematika</p>
+            <!-- Responsive video embed -->
+            <div class="video-embed">
+                <!-- Embed iframe yang diberikan user -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/8a3TZ6gm_X4?si=iRo-su8ZRjUIXt31" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="artikel-ilmiah" class="artikel-ilmiah">
+        <div class="container">
+            <!-- Judul section -->
+            <h2>Mini Riset PKN </h2>
+            <!-- Deskripsi section -->
+            <p class="artikel-ilmiah-section-desc">Artikel Ilmiah Analisa Kekurangan Sistem Pendidikan di Indonesia untuk <br> Mengembangkan Kualitas Pendidikan Warga Negara yang Lebih Baik</p>
+            
+            <!-- Embed PDF Container -->
+            <div class="artikel-viewer-container">
+                <!-- PDF embed menggunakan PDF.js atau object tag -->
+                <!-- Pastikan file cv.pdf sudah ada di folder documents/ -->
+                <object data="documents/ANALISA KEKURANGAN SISTEM PENDIDIKAN DI INDONESIA UNTUK MENGEMBANGKAN KUALITAS PENDIDIKAN WA.pdf" type="application/pdf" width="100%" height="800">
+                    <!-- Fallback jika browser tidak support object tag -->
+                    <p>Maaf, PDF tidak bisa ditampilkan. 
+                        <a href="documents/ANALISA KEKURANGAN SISTEM PENDIDIKAN DI INDONESIA UNTUK MENGEMBANGKAN KUALITAS PENDIDIKAN WA.pdf"></a>
+                    </p>
+                </object>
+            </div>
+        </div>
+    </section>
+
+    <section id="infografis" class="infografis">
+        <!-- Container untuk responsive layout -->
+        <div class="infografis-container">
+            <!-- Judul section -->
+            <h2>INFOGRAFIS</h2>
+            <!-- Deskripsi section -->
+            <p class="section-infografis-desc">Infografis Analisa Kekurangan Sistem Pendidikan di Indonesia untuk <br> Mengembangkan Kualitas Pendidikan Warga Negara yang Lebih Baik</p>
+            
+            <!-- Embed Image Container -->
+            <div class="jpg-viewer-container">
+                <!-- Image display untuk dokumen/infografis -->
+                <!-- Pastikan file gambar sudah ada di folder documents/ -->
+                <img src="documents/Infografis Kelompok CivicStatistikaDKV _page-0001.jpg" alt="Proposal PKN Infografis" class="jpg-viewer-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: KONTAK -->
+    <section id="contact" class="contact">
+        <!-- Container untuk responsive layout -->
+        <div class="container">
+            <!-- Judul section -->
+            <h2>Hubungi Saya</h2>
+            
+            <!-- Grid dua kolom: form dan info kontak -->
+            <div class="contact-grid">
+                <!-- Kolom kiri: Form kontak -->
+                <div class="contact-form">
+                    <!-- Form untuk mengirim pesan -->
+                    <form onsubmit="handleFormSubmit(event)">
+                        <!-- Input nama -->
+                        <input type="text" placeholder="Nama Anda" required>
+                        <!-- Input email -->
+                        <input type="email" placeholder="Email Anda" required>
+                        <!-- Input nomor telepon (opsional) -->
+                        <input type="tel" placeholder="Nomor Telepon (opsional)">
+                        <!-- Input subjek pesan -->
+                        <input type="text" placeholder="Subjek" required>
+                        <!-- Textarea untuk pesan panjang -->
+                        <textarea placeholder="Pesan Anda" rows="5" required></textarea>
+                        <!-- Tombol submit form -->
+                        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                    </form>
+                </div>
+
+                <!-- Kolom kanan: Informasi kontak -->
+                <div class="contact-info">
+                    <!-- List informasi kontak -->
+                    <div class="info-item">
+                        <!-- Icon email -->
+                        <a href="reko@example.com" target="_blank" aria-label="GitHub Profile" class="style-icon-hero">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" aria-hidden="true">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                    <path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
+                                    <path d="m3 7l9 6l9-6"/>
+                                </g>
+                            </svg>
+                        </a>
+                        <!-- Heading untuk email -->
+                        <div>
+                            <h4>Email</h4>
+                            <!-- Email address yang bisa diklik -->
+                            <p><a href="mailto:reko@example.com">reko@example.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <!-- Icon telepon -->
+                        <a href="reko@example.com" target="_blank" aria-label="GitHub Profile" class="style-icon-hero">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                    d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/>
+                            </svg>
+                        </a>
+                        <!-- Heading untuk telepon -->
+                        <div>
+                            <h4>Telepon</h4>
+                            <!-- Nomor telepon yang bisa diklik -->
+                            <p><a href="tel:+6281234567890">+62 812 3456 7890</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <!-- Icon alamat -->
+                        <a href="reko@example.com" target="_blank" aria-label="GitHub Profile" class="style-icon-hero">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" aria-hidden="true">
+                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                    <path d="M5 12H3l9-9l9 9h-2M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>
+                                    <path d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6"/>
+                                </g>
+                            </svg>
+                        </a>
+                        <!-- Heading untuk alamat -->
+                        <div>
+                            <h4>Alamat</h4>
+                            <!-- Alamat lengkap -->
+                            <p>Jakarta, Indonesia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <!-- Container untuk footer content -->
+        <div class="container">
+            <!-- GitHub Icon Footer -->
+            <div class="hero-social-icon">
+                    <a href="https://github.com" target="_blank" aria-label="GitHub Profile" class="style-icon-hero">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 432 416" aria-hidden="true">
+                            <path fill="currentColor" d="M213.5 0q88.5 0 151 62.5T427 213q0 70-41 125.5T281 416q-14 2-14-11v-58q0-27-15-40q44-5 70.5-27t26.5-77q0-34-22-58q11-26-2-57q-18-5-58 22q-26-7-54-7t-53 7q-18-12-32.5-17.5T107 88h-6q-12 31-2 57q-22 24-22 58q0 55 27 77t70 27q-11 10-13 29q-42 18-62-18q-12-20-33-22q-2 0-4.5.5t-5 3.5t8.5 9q14 7 23 31q1 2 2 4.5t6.5 9.5t13 10.5T130 371t30-2v36q0 13-14 11q-64-22-105-77.5T0 213q0-88 62.5-150.5T213.5 0z"/>
+                        </svg>
+                    </a>
+                
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram Profile" class="style-icon-hero">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill="currentColor" d="M12 0C8.74 0 8.333.015 7.053.072C5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053C.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913a5.885 5.885 0 0 0 1.384 2.126A5.868 5.868 0 0 0 4.14 23.37c.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558a5.898 5.898 0 0 0 2.126-1.384a5.86 5.86 0 0 0 1.384-2.126c.296-.765.499-1.636.558-2.913c.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913a5.89 5.89 0 0 0-1.384-2.126A5.847 5.847 0 0 0 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071c1.17.055 1.805.249 2.227.415c.562.217.96.477 1.382.896c.419.42.679.819.896 1.381c.164.422.36 1.057.413 2.227c.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 0 1-.899 1.382a3.744 3.744 0 0 1-1.38.896c-.42.164-1.065.36-2.235.413c-1.274.057-1.649.07-4.859.07c-3.211 0-3.586-.015-4.859-.074c-1.171-.061-1.816-.256-2.236-.421a3.716 3.716 0 0 1-1.379-.899a3.644 3.644 0 0 1-.9-1.38c-.165-.42-.359-1.065-.42-2.235c-.045-1.26-.061-1.649-.061-4.844c0-3.196.016-3.586.061-4.861c.061-1.17.255-1.814.42-2.234c.21-.57.479-.96.9-1.381c.419-.419.81-.689 1.379-.898c.42-.166 1.051-.361 2.221-.421c1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 1 0 0 12.324a6.162 6.162 0 1 0 0-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4s4 1.79 4 4s-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 0 1-2.88 0a1.44 1.44 0 0 1 2.88 0z"/>
+                        </svg>
+                    </a>
+
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn Profile" class="style-icon-hero">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 20 20" aria-hidden="true">
+                            <path fill="currentColor" d="M17.04 17.043h-2.962v-4.64c0-1.107-.023-2.531-1.544-2.531c-1.544 0-1.78 1.204-1.78 2.449v4.722H7.793V7.5h2.844v1.3h.039c.397-.75 1.364-1.54 2.808-1.54c3.001 0 3.556 1.974 3.556 4.545v5.238ZM4.447 6.194c-.954 0-1.72-.771-1.72-1.72s.767-1.72 1.72-1.72a1.72 1.72 0 0 1 0 3.44Zm1.484 10.85h-2.97V7.5h2.97v9.543ZM18.521 0H1.476C.66 0 0 .645 0 1.44v17.12C0 19.355.66 20 1.476 20h17.042c.815 0 1.482-.644 1.482-1.44V1.44C20 .646 19.333 0 18.518 0h.003Z"/>
+                        </svg>
+                    </a>
+                </div>
+            <!-- Copyright text -->
+            <p>&copy; <span id="year"></span> Reko. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL: Project Detail -->
+    <!-- Modal untuk menampilkan detail proyek saat di-klik -->
+    <div id="projectModal" class="modal">
+        <!-- Background overlay yang bisa diklik untuk menutup modal -->
+        <div class="modal-overlay" onclick="closeModal('projectModal')"></div>
+        <!-- Konten modal -->
+        <div class="modal-content">
+            <!-- Tombol close modal -->
+            <button class="modal-close" onclick="closeModal('projectModal')">✕</button>
+            <!-- Judul proyek -->
+            <h2 id="modalTitle"></h2>
+            <!-- Kategori proyek -->
+            <div class="modal-meta">
+                <span class="category" id="modalCategory"></span>
+            </div>
+            <!-- Deskripsi lengkap proyek -->
+            <p id="modalDescription"></p>
+            <!-- Teknologi yang digunakan -->
+            <div class="modal-tech">
+                <h4>Teknologi:</h4>
+                <p id="modalTech"></p>
+            </div>
+            <!-- Link ke proyek -->
+            <a id="modalLink" href="#" class="btn btn-primary" target="_blank">Lihat Proyek</a>
+        </div>
+    </div>
+
+    <!-- MODAL: Video Player -->
+    <!-- Modal untuk menampilkan video YouTube saat di-klik -->
+    <div id="videoModal" class="modal">
+        <!-- Background overlay yang bisa diklik untuk menutup modal -->
+        <div class="modal-overlay" onclick="closeModal('videoModal')"></div>
+        <!-- Konten modal -->
+        <div class="modal-content modal-video">
+            <!-- Tombol close modal -->
+            <button class="modal-close" onclick="closeModal('videoModal')">✕</button>
+            <!-- Iframe untuk embed video YouTube -->
+            <iframe id="videoFrame" width="100%" height="500" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+        <!-- MODAL: Document Viewer (16:9) -->
+        <div id="docModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="docModalTitle" aria-hidden="true">
+            <div class="modal-overlay" onclick="closeModal('docModal')"></div>
+            <div class="modal-content modal-16by9">
+                <button class="modal-close" onclick="closeModal('docModal')">✕</button>
+                <h2 id="docModalTitle">Dokumen</h2>
+                <div id="pdfViewer" class="modal-frame" tabindex="0" aria-live="polite"></div>
+                <div style="margin-top:12px; text-align:right;">
+                    <button class="btn btn-secondary" onclick="downloadCurrentDoc()">Download</button>
+                </div>
+            </div>
+        </div>
+
+    <!-- Script JavaScript untuk semua functionality -->
+    <script src="script.js"></script>
+</body>
+</html>

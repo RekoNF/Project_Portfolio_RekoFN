@@ -1,0 +1,2106 @@
+/* ========================================
+   GLOBAL STYLES & CSS VARIABLES
+   ======================================== */
+
+/* Deklarasi CSS variables untuk warna, spacing, dan font */
+:root {
+    /* Warna utama untuk brand */
+    --primary-color: #FF7315;
+    /* Warna sekunder untuk accent */
+    --secondary-color: #3A3535;
+    /* Warna accent untuk highlight */
+    --accent-color: #232020;
+    /* Warna text utama */
+    --text-color: #1f2937;
+    /* Warna text yang lebih terang */
+    --text-light: #6b7280;
+    /* Warna background utama */
+    --bg-color: #F4F4F4;
+    /* Warna background yang lebih gelap */
+    --bg-light: #f9fafb;
+    /* Warna border */
+    --border-color: #FF7315;
+    
+    /* Spacing variables untuk margin dan padding */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    
+    /* Font variables */
+    --font-family: 'Poppins', sans-serif;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 24px;
+    --font-size-2xl: 32px;
+    --font-size-3xl: 48px;
+    
+    /* Transition untuk smooth animation */
+    --transition: all 0.3s ease-in-out smooth;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Reset CSS untuk semua element */
+* {
+    /* Menghapus margin default */
+    margin: 0;
+    /* Menghapus padding default */
+    padding: 0;
+    /* Box-sizing untuk kalkulasi width/height yang akurat */
+    box-sizing: border-box;
+}
+
+/* Styling untuk html element */
+html {
+    /* Smooth scroll behavior saat navigasi */
+    scroll-behavior: smooth;
+}
+
+/* Styling untuk body */
+body {
+    /* Font family utama */
+    font-family: var(--font-family);
+    /* Warna text */
+    color: var(--text-color);
+    /* Warna background */
+    background-color: var(--bg-color);
+    /* Line height untuk readability */
+    line-height: 1.6;
+    /* Ukuran font default */
+    font-size: var(--font-size-base);
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Container utility class untuk width max dan padding horizontal */
+.container {
+    /* Max width untuk large screens */
+    max-width: 1200px;
+    /* Center container */
+    margin: 0 auto;
+    /* Padding horizontal untuk mobile */
+    padding: 0 var(--spacing-md);
+}
+
+/* Styling untuk heading h1-h6 */
+h1, h2, h3, h4, h5, h6 {
+    /* Font weight lebih tebal untuk heading */
+    font-weight: 700;
+    /* Margin bottom untuk spacing */
+    margin-bottom: var(--spacing-md);
+    /* Line height lebih kecil untuk heading */
+    line-height: 1.2;
+}
+
+/* Styling khusus untuk h1 */
+h1 {
+    /* Font size terbesar */
+    font-size: var(--font-size-3xl);
+}
+
+/* Styling khusus untuk h2 */
+h2 {
+    /* Font size lebih kecil dari h1 */
+    font-size: var(--font-size-2xl);
+}
+
+/* Styling khusus untuk h3 */
+h3 {
+    /* Font size untuk sub-heading */
+    font-size: var(--font-size-xl);
+}
+
+/* Styling untuk paragraph */
+p {
+    /* Margin bottom untuk spacing */
+    margin-bottom: var(--spacing-md);
+    /* Warna text lebih terang untuk paragraph */
+    color: var(--text-light);
+}
+
+/* Styling untuk link */
+a {
+    /* Warna link */
+    color: var(--primary-color);
+    /* Menghapus text decoration default */
+    text-decoration: none;
+    /* Transition untuk hover effect */
+    transition: var(--transition);
+}
+
+/* Hover state untuk link */
+a:hover {
+    /* Warna link saat hover */
+    color: var(--secondary-color);
+}
+
+/* ========================================
+   BUTTON STYLES
+   ======================================== */
+
+/* Styling untuk button element */
+.btn {
+    /* Padding untuk button */
+    padding: var(--spacing-md) var(--spacing-lg);
+    /* Font size */
+    font-size: var(--font-size-base);
+    /* Border radius untuk rounded corner */
+    border-radius: 8px;
+    /* Menghapus border default */
+    border: none;
+    /* Cursor pointer */
+    cursor: pointer;
+    /* Transition untuk smooth effect */
+    transition: var(--transition);
+    /* Font weight bold */
+    font-weight: 600;
+    /* Display inline-block agar bisa dikasi padding */
+    display: inline-block;
+}
+
+/* Styling untuk button primary */
+.btn-primary {
+    /* Background color primary */
+    background-color: var(--primary-color);
+    /* Text color white */
+    color: white;
+}
+
+/* Hover state untuk button primary */
+.btn-primary:hover {
+    /* Background color berubah ke secondary saat hover */
+    background-color: var(--secondary-color);
+    /* Transform scale up sedikit */
+    transform: translateY(-2px);
+    /* Box shadow untuk depth effect */
+    box-shadow: 0 15px 25px rgba(255, 102, 0, 0.555);
+}
+
+/* Styling untuk button secondary */
+.btn-secondary {
+    /* Background color transparent */
+    background-color: transparent;
+    /* Border color primary */
+    border: 2px solid var(--primary-color);
+    /* Text color primary */
+    color: var(--primary-color);
+}
+
+/* Hover state untuk button secondary */
+.btn-secondary:hover {
+    /* Background color primary */
+    background-color: var(--primary-color);
+    /* Text color white */
+    color: white;
+}
+
+/* ========================================
+   NAVBAR / HEADER STYLES
+   ======================================== */
+
+/* Styling untuk navbar */
+.navbar {
+    /* Position sticky agar tetap di atas saat scroll */
+    position: sticky;
+    /* Z-index tinggi agar header (termasuk hamburger) selalu di atas overlay */
+    z-index: 2200;
+    /* Top 0 untuk stick di atas */
+    top: 0;
+    /* Background color */
+    background-color: var(--bg-color);
+    /* Box shadow untuk depth */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Padding vertikal */
+    padding: var(--spacing-md) 0;
+}
+
+/* Navbar container flex layout */
+.navbar .container {
+    /* Display flex untuk horizontal layout */
+    display: flex;
+    /* Justify content space between */
+    justify-content: space-between;
+    /* Align items center vertikal */
+    align-items: center;
+}
+
+/* Styling untuk logo */
+.logo {
+    /* Font size besar */
+    font-size: var(--font-size-2xl);
+    /* Font weight bold */
+    font-weight: 700;
+    /* Color primary */
+    color: var(--secondary-color);
+}
+.logo-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg);
+}
+
+.logo-pic {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Styling untuk nav menu */
+.nav-menu {
+    /* Display flex untuk horizontal layout */
+    display: flex;
+    /* Gap antar nav link */
+    gap: var(--spacing-xl);
+}
+
+/* ========================================
+   HAMBURGER ICON ANIMATION (dengan SVG custom)
+   PERUBAHAN: Styling dan animasi untuk hamburger + X icon
+   ======================================== */
+
+/* NAV TOGGLE (HAMBURGER) */
+/* Styling untuk button toggle hamburger */
+.nav-toggle {
+    /* PERUBAHAN PENTING:  display: none di awal (hidden by default di desktop) */
+    display: none; /* hidden on desktop, hanya tampil di mobile/tablet */
+    background: none; /* background transparan agar hanya icon terlihat */
+    border: none; /* menghapus border default button */
+    cursor: pointer; /* cursor berubah jadi pointer saat hover */
+    padding: 8px; /* padding untuk area klik yang lebih besar */
+    position: relative; /* agar SVG child bisa absolute positioning */
+    width: 44px; /* lebar area toggle */
+    height: 44px; /* tinggi area toggle */
+    z-index: 2600; /* z-index tinggi agar selalu klik-able */
+}
+
+/* ===== SVG ICON STYLING ===== */
+/* Base styling untuk semua hamburger icon */
+.hamburger-icon {
+    width: 28px; /* ukuran icon */
+    height: 28px; /* ukuran icon */
+    color: var(--text-color); /* warna icon sesuai tema (dark color) */
+    
+    /* PERUBAHAN PENTING:  Transisi smooth untuk animasi */
+    /* opacity: untuk fade in/out icon */
+    /* transform: untuk rotate + scale effect */
+    transition:  opacity 0.32s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+    
+    /* Position absolute agar kedua icon bisa overlap di tempat yang sama */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center; /* rotation berlaku dari center icon */
+    margin-left: -14px; /* center icon (-width/2) */
+    margin-top: -14px; /* center icon (-height/2) */
+}
+
+/* ===== STATE:  MENU TUTUP (CLOSED) ===== */
+/* Icon hamburger (garis-garis) - tampil saat menu TUTUP */
+.hamburger-closed {
+    opacity: 1; /* icon terlihat penuh */
+    transform: rotate(0deg) scale(1); /* rotasi normal, ukuran normal */
+    display: block; /* tampilkan di DOM */
+}
+
+/* Icon X (close) - tersembunyi saat awal */
+.hamburger-open {
+    opacity: 0; /* icon tak terlihat (transparent) */
+    transform: rotate(-90deg) scale(0.8); /* rotate -90 deg + scale kecil (animasi masuk) */
+    display: block; /* tetap render di DOM agar transisi smooth */
+    pointer-events:  none; /* jangan respond click saat invisible */
+}
+
+/* ===== STATE: MENU BUKA (OPEN) ===== */
+/* Saat navbar punya class .  nav-open (menu terbuka) */
+
+/* Icon hamburger saat menu buka:  fade out + rotate out */
+.navbar.nav-open .hamburger-closed {
+    opacity: 0; /* sembunyikan icon hamburger */
+    transform: rotate(90deg) scale(0.8); /* rotate keluar 90 derajat + scale down */
+    pointer-events:  none; /* jangan respond click saat invisible */
+}
+
+/* Icon X saat menu buka: fade in + rotate in dari normal */
+.navbar.nav-open .hamburger-open {
+    opacity:  1; /* tampilkan icon X penuh */
+    transform:  rotate(0deg) scale(1); /* kembali rotasi normal + scale normal */
+    pointer-events:   auto; /* respond click saat visible */
+}
+
+/* ===== HOVER EFFECT ===== */
+/* Sedikit animasi saat hover untuk feedback visual ke user */
+.nav-toggle:hover .hamburger-closed {
+    /* Hamburger icon scale up sedikit saat hover (menu tutup) */
+    transform: rotate(0deg) scale(1.15);
+}
+
+.navbar.nav-open .nav-toggle:hover .hamburger-closed {
+    /* Hamburger icon scale up sambil rotate out (menu buka) */
+    transform: rotate(90deg) scale(0.95);
+}
+
+.nav-toggle:hover .hamburger-open {
+    /* X icon scale up sedikit saat hover (menu tutup - icon invisible) */
+    transform: rotate(-90deg) scale(0.95);
+}
+
+.navbar.nav-open .nav-toggle:hover .hamburger-open {
+    /* X icon scale up saat hover (menu buka) */
+    transform: rotate(0deg) scale(1.15);
+}
+
+/* ========================================
+   RESPONSIVE:  HAMBURGER TAMPIL HANYA DI MOBILE/TABLET
+   PERUBAHAN: Media query untuk tampilkan hamburger
+   ======================================== */
+
+/* MOBILE / TABLET STYLES */
+@media (max-width: 900px) {
+    /* show hamburger */
+    .nav-toggle { display: flex; align-items: center; justify-content: center; }
+
+    .nav.toggle {
+        z-index: 2600;
+        position: relative;
+    }
+
+    /* nav container layout */
+    .nav-container { display: flex; align-items: center; justify-content: space-between; }
+
+    /* hide desktop nav and convert to drawer */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -320px; /* hidden by default off-screen */
+        height: 100vh;
+        width: 300px;
+        background: var(--bg-color);
+        box-shadow: -8px 0 30px rgba(0,0,0,0.12);
+        flex-direction: column;
+        gap: 0;
+        padding: var(--spacing-2xl) var(--spacing-md);
+        transition: right 0.32s cubic-bezier(.2,.8,.2,1);
+        /* Ensure the drawer sits above overlay and header when open */
+        z-index: 2500;
+    }
+
+    .nav-menu a {
+        padding: 12px 8px;
+        margin: 12px;
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    /* When navbar has open state (header.nav-open) slide in */
+    .navbar.nav-open .nav-menu {
+        right: 0;
+    }
+
+    /* Dim the page when menu open - implement via overlay */
+    .nav-overlay {
+        display: none;
+        pointer-events: none;
+    }
+    /* Support both header-based and body-based toggles */
+    .navbar.nav-open + .nav-overlay,
+    body.menu-open .nav-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.4);
+        /* overlay sits under the nav drawer but below the toggle when closed */
+        z-index: 2100;
+        pointer-events: auto;
+    }
+
+    /* Allow body.menu-open as alternate trigger to slide the drawer in */
+    body.menu-open .nav-menu {
+        right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    /* show hamburger */
+    .nav-toggle { display: flex; align-items: center; justify-content: center; }
+
+    .nav.toggle {
+        z-index: 2600;
+        position: relative;
+    }
+
+    /* nav container layout */
+    .nav-container { display: flex; align-items: center; justify-content: space-between; }
+
+    /* hide desktop nav and convert to drawer */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -320px; /* hidden by default off-screen */
+        height: 100vh;
+        width: 300px;
+        background: var(--bg-color);
+        box-shadow: -8px 0 30px rgba(0,0,0,0.12);
+        flex-direction: column;
+        gap: 0;
+        padding: var(--spacing-2xl) var(--spacing-md);
+        transition: right 0.32s cubic-bezier(.2,.8,.2,1);
+        /* Ensure the drawer sits above overlay and header when open */
+        z-index: 2500;
+    }
+
+    .nav-menu a {
+        padding: 12px 8px;
+        margin: 12px;
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    /* When navbar has open state (header.nav-open) slide in */
+    .navbar.nav-open .nav-menu {
+        right: 0;
+    }
+
+    /* Dim the page when menu open - implement via overlay */
+    .nav-overlay {
+        display: none;
+        pointer-events: none;
+    }
+    /* Support both header-based and body-based toggles */
+    .navbar.nav-open + .nav-overlay,
+    body.menu-open .nav-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.4);
+        /* overlay sits under the nav drawer but below the toggle when closed */
+        z-index: 2100;
+        pointer-events: auto;
+    }
+
+    /* Allow body.menu-open as alternate trigger to slide the drawer in */
+    body.menu-open .nav-menu {
+        right: 0;
+    }
+}
+
+/* Styling untuk nav link */
+.nav-link {
+    /* Font weight 600 */
+    font-size: 16px;
+    font-weight: 600;
+    /* Color text */
+    color: var(--text-color);
+    /* Padding bottom untuk underline space */
+    padding: 8px;
+    /* Border bottom transparent default */
+    border-radius: 10px;
+    /* Transition untuk smooth effect */
+    transition: var(--transition);
+}
+
+/* Hover state untuk nav link */
+.nav-link:hover,
+/* Active state untuk nav link */
+.nav-link.active {
+    font-weight: 600;
+    padding: 8px;
+    /* Color primary */
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    /* Border bottom primary */
+    border: 2px solid transparent;
+    border-radius: 12px;
+}
+
+/* ========================================
+   (potongan) STYLE UNTUK NAV DROPDOWN
+   Saya menambahkan aturan di bagian navbar agar dropdown terlihat/berfungsi
+   dan responsive. Komentar di tiap baris/aturan menjelaskan tujuannya.
+*/
+
+/* 1) Container dropdown: posisi relatif agar .dropdown-menu bisa absolut */
+.nav-item.nav-dropdown {
+    position: relative; /* agar dropdown-menu bisa diposisikan relatif container ini */
+    display: inline-block; /* agar tampak di baris yang sama dengan link lain */
+    margin-left: 6px; /* spasi kecil diantara item nav */
+}
+
+/* 2) Toggle button (Dokumen) — gunakan styling serupa dengan .nav-link */
+.dropdown-toggle {
+    background: none; /* transparan supaya mirip link */
+    font-weight: 600; /* konsisten dengan nav-link */
+    border: 2px solid transparent; /* tanpa border */
+    cursor: pointer; /* pointer saat hover */
+    font-weight: 600; /* konsisten dengan nav-link */
+    color: var(--text-color); /* warna teks default */
+    padding: 8px; /* padding yang nyaman untuk klik */
+    display: inline-flex; /* susun teks + caret horizontal */
+    align-items: center; /* vertikal center */
+    gap: 6px; /* jarak caret */
+}
+
+/* caret kecil */
+.dropdown-caret {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+}
+
+/* 3) Dropdown menu: awalnya tersembunyi */
+.dropdown-menu {
+    position: absolute; /* ambil posisi absolut terhadap .nav-item.nav-dropdown */
+    top: calc(100% + 8px); /* menempel di bawah toggle */
+    left: 0; /* mulai dari kiri container */
+    min-width: 180px; /* lebar minimal menu */
+    background: white; /* latar putih */
+    border-radius: 8px; /* rounded */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12); /* shadow */
+    padding: 8px; /* padding di dalam menu */
+    display: none; /* disembunyikan default */
+    z-index: 2600; /* di atas nav */
+}
+
+/* 4) Item di dropdown (link) */
+.dropdown-item {
+    display: block; /* full width klik area */
+    padding: 8px 12px; /* ruang klik */
+    color: var(--text-color); /* warna text default */
+    border-radius: 6px; /* sedikit rounded */
+    text-decoration: none; /* tanpa underline */
+    transition: background 0.12s ease;
+}
+
+/* Hover untuk item dropdown */
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background: var(--bg-light); /* highlight saat hover/focus */
+    color: var(--primary-color); /* ubah warna teks saat hover */
+}
+
+/* 5) State: saat parent punya class .open, tampilkan menu */
+.nav-item.nav-dropdown.open > .dropdown-menu {
+    display: block; /* tunjukkan menu */
+}
+
+/* 6) Small screen: buat dropdown menjadi full width drawer-like */
+@media (max-width: 900px) {
+    .dropdown-menu {
+        position: static; /* ikut alur dokumen di drawer mobile */
+        width: 100%;
+        box-shadow: none;
+        background: transparent;
+        padding: 0;
+    }
+    .dropdown-item {
+        padding: 12px 8px;
+        background: white;
+        margin: 6px 0;
+        border-radius: 8px;
+    }
+    /* pastikan toggle terlihat seperti menu item di mobile */
+    .dropdown-toggle {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+/* ========================================
+   CATATAN:
+   - Tidak mengubah aturan .nav-link existing; dropdown-toggle memakai class nav-link
+     sehingga akan mewarisi tampilan dasar (konsistensi visual).
+   - Semua aturan tambahan di atas hanya untuk dropdown; aturan lain di file Anda tetap sama.
+*/
+
+/* ========================================
+   HERO SECTION STYLES
+   ======================================== */
+
+/* Styling untuk hero section */
+.hero {
+    /* Min height viewport untuk full screen effect */
+    min-height: 100vh;
+    /* Display flex untuk center content */
+    display: flex;
+    /* Align items center vertikal */
+    align-items: center;
+    /* Justify content center horizontal */
+    justify-content: center;
+    /* Background linear gradient */
+    background: linear-gradient(135deg, #3A3535 0%, #232020 100%);
+    /* Color text white */
+    color: white;
+    /* Padding vertikal */
+    padding: var(--spacing-2xl) 0;
+}
+
+.hero .name {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-shadow: #6b7280 1px 1px 5px;
+    font-weight: var(--font-weight-extrabold);
+}
+
+/* Styling untuk hero content */
+.hero-content {
+    /* Text align center */
+    text-align: center;
+}
+
+/* GitHub icon in hero section */
+.hero-social-icon {
+    margin-top: var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    animation: fadeIn 0.8s ease-in 0.2s backwards;
+}
+
+/* Styling for the hero icon links (class used in HTML: .style-icon-hero) */
+.style-icon-hero {
+    padding: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    color: var(--primary-color);;
+    border-radius: 15px;
+    background: transparent;
+    transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease;
+}
+
+.style-icon-hero svg {
+    width: 35px;
+    height: 35px;
+    fill: currentColor;
+}
+
+.style-icon-hero:hover {
+    transform: translateY(-3px) scale(1.05);
+    opacity: 0.95;
+    background: var(--bg-light);
+}
+
+/* Styling untuk h1 di hero */
+.hero h1 {
+    /* Font size besar */
+    font-size: 3.5rem;
+    /* Margin bottom spacing */
+    margin-bottom: var(--spacing-lg);
+    /* Animation fade in */
+    animation: fadeIn 0.8s ease-in;
+}
+
+/* Styling untuk paragraph di hero */
+.hero p {
+    /* Font size lebih besar */
+    font-size: var(--font-size-lg);
+    /* Margin bottom spacing */
+    margin-bottom: var(--spacing-2xl);
+    /* Color white */
+    color: white;
+    /* Animation fade in dengan delay */
+    animation: fadeIn 0.8s ease-in 0.2s backwards;
+}
+
+/* Styling untuk hero buttons container */
+.hero-buttons {
+    /* Display flex untuk horizontal button layout */
+    display: flex;
+    /* Gap antar button */
+    gap: var(--spacing-lg);
+    /* Justify content center */
+    justify-content: center;
+    /* Animation fade in dengan delay lebih lama */
+    animation: fadeIn 0.8s ease-in 0.4s backwards;
+}
+
+/* ========================================
+   ABOUT SECTION STYLES
+   ======================================== */
+
+/* Styling untuk about section */
+.about {
+    /* Padding vertikal */
+    padding: var(--spacing-2xl) 0;
+    /* Background color light */
+    background-color: var(--bg-light);
+}
+.about p{
+    font-size: 1.1rem;
+    color: #F4F4F4;
+    font-weight: var(--font-weight-medium);
+}
+
+/* Styling untuk about h2 */
+.about h2 {
+    /* Text align center */
+    text-align: center;
+    /* Margin bottom spacing */
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* Typed text and cursor */
+.typed {
+    font-weight: 800;
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.typed-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    margin-left: 6px;
+    vertical-align: middle;
+    
+    background: var(--primary-color);
+    animation: blink-cursor 1s steps(2, start) infinite;
+}
+
+@keyframes blink-cursor {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Styling untuk about grid */
+.about-grid {
+    justify-content: space-between;
+    /* Display grid 2 kolom */
+    display: grid;
+    /* Grid template columns 1fr 1fr */
+    grid-template-columns: 1fr 1fr;
+    /* Gap antar grid item */
+    gap: var(--spacing-2xl);
+}
+/* Profile row inside about: image next to intro paragraph */
+.about-profile-row {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Give about profile row and skills a card-like appearance */
+.about-profile-row,
+.skills {
+    background-color: var(--secondary-color);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    padding: var(--spacing-2xl);
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    .about-profile-row { gap: var(--spacing-sm); }
+    .profile-pic { width: 56px; height: 56px; }
+    .about-profile-row p { font-size: 0.95rem; }
+}
+
+/* Tablet and smaller: stack profile picture above text */
+@media (max-width: 900px) {
+    .about-profile-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .about-profile-row > div { width: 100%; }
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+    /* Ensure skill card still looks good on narrow screens */
+    .skills { margin-top: var(--spacing-md); }
+}
+
+/* Styling untuk skill item */
+.skill-item {
+    /* Margin bottom spacing */
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Styling untuk skill span */
+.skill-item span {
+    /* Display block */
+    display: block;
+    /* Margin bottom spacing */
+    margin-bottom: var(--spacing-sm);
+    /* Font weight 600 */
+    font-weight: 600;
+}
+
+/* Styling untuk progress bar container */
+.progress-bar {
+    /* Width full */
+    width: 100%;
+    /* Height 8px */
+    height: 8px;
+    /* Background color light gray */
+    background-color: var(--border-color);
+    /* Border radius */
+    border-radius: 4px;
+    /* Overflow hidden untuk rounded progress */
+    overflow: hidden;
+}
+
+/* Styling untuk progress fill */
+.progress {
+    /* Height full */
+    height: 100%;
+    /* Background linear gradient */
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    /* Transition smooth */
+    transition: var(--transition);
+}
+.about-stats {
+    padding: 10px;
+}
+/* Styling untuk stat card */
+.stat-card {
+    /* Display flex flex-direction column */
+    display: flex;
+    /* Flex direction column */
+    flex-direction: column;
+    /* Align items center */
+    align-items: center;
+    /* Padding spacing */
+    padding: var(--spacing-2xl);
+    margin: var(--spacing-md);
+    /* Background color white */
+    background-color: white;
+    /* Border radius */
+    border-radius: 12px;
+    /* Box shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Text align center */
+    text-align: center;
+}
+
+/* Styling untuk stat number */
+.stat-number {
+    /* Font size 2xl */
+    font-size: var(--font-size-3xl);
+    /* Font weight 700 */
+    font-weight: 700;
+    /* Color primary */
+    color: var(--primary-color);
+    /* Margin bottom spacing */
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Styling untuk stat label */
+.stat-label {
+    /* Font size sm */
+    font-size: var(--font-size-sm);
+    /* Color text light */
+    color: var(--text-light);
+}
+
+/* ========================================
+   PORTFOLIO SECTION STYLES
+   ======================================== */
+
+/* Styling untuk portfolio section */
+.portfolio {
+    /* Padding vertikal */
+    padding: var(--spacing-2xl) 0;
+    background: var(--secondary-color);
+}
+.portfolio-card {
+    padding: 15px;
+}
+/* Styling untuk portfolio h2 */
+.portfolio h2 {
+    /* Text align center */
+    text-align: center;
+    /* Margin bottom spacing */
+    margin-bottom: var(--spacing-2xl);
+    color: var(--primary-color);
+}
+
+/* Styling untuk portfolio grid */
+.portfolio-grid {
+    /* Display grid 3 kolom */
+    display: grid;
+    /* Grid template columns repeat 3 */
+    grid-template-columns: repeat(3, 1fr);
+    /* Gap antar grid item */
+    gap: var(--spacing-xl);
+}
+
+/* Styling untuk portfolio card */
+.portfolio-card {
+    /* Background color white */
+    background-color: white;
+    /* Border radius */
+    border-radius: 12px;
+    /* Overflow hidden */
+    overflow: hidden;
+    /* Box shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Cursor pointer */
+    cursor: pointer;
+    /* Transition smooth */
+    transition: var(--transition);
+}
+
+/* Hover state untuk portfolio card */
+.portfolio-card:hover {
+    /* Transform scale up */
+    transform: translateY(-10px);
+    /* Box shadow lebih besar */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling untuk project image */
+.project-image {
+    /* Width full */
+    width: 100%;
+    /* Height 200px */
+    height: auto;
+    /* Background linear gradient */
+    background: #F4F4F4;
+    /* Display flex untuk center emoji */
+    display: flex;
+    /* Align items center */
+    align-items: center;
+    /* Justify content center */
+    justify-content: center;
+    /* Font size 4xl untuk emoji */
+    font-size: 3rem;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+}
+
+/* Styling untuk portfolio card content */
+.portfolio-card h3,
+.portfolio-card p {
+    /* Padding horizontal */
+    padding: 0 var(--spacing-lg);
+}
+
+/* Styling untuk portfolio card h3 */
+.portfolio-card h3 {
+    /* Padding top */
+    padding-top: var(--spacing-lg);
+    /* Margin bottom */
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Styling untuk portfolio card paragraph */
+.portfolio-card p {
+    margin: 10px;
+    /* Padding bottom */
+    padding-bottom: var(--spacing-lg);
+    /* Font size sm */
+    font-size: var(--font-size-sm);
+    /* Color text light */
+    color: var(--text-light);
+}
+
+
+/* ========================================
+   MEDIA SECTION STYLES
+   ======================================== */
+
+/* Styling untuk media section */
+.media {
+    /* Padding vertikal */
+    padding: var(--spacing-2xl) 0;
+    /* Background color light */
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+.media p{
+    font-size: 1.1rem;
+    color: #F4F4F4;
+    font-weight: var(--font-weight-medium);
+}
+/* Styling untuk media h2 */
+.media h2 {
+    /* Text align center */
+    text-align: center;
+    /* Margin bottom spacing */
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* Styling untuk media grid */
+.media-grid {
+    /* Display grid 3 kolom */
+    display: grid;
+    /* Grid template columns repeat 3 */
+    grid-template-columns: repeat(3, 1fr);
+    /* Gap antar grid item */
+    gap: var(--spacing-xl);
+}
+
+/* Styling untuk media item */
+.media-item {
+    /* Position relative untuk absolute child */
+    position: relative;
+    /* Padding bottom 56% untuk aspect ratio 16:9 */
+    padding-bottom: 56.25%;
+    /* Height 0 untuk padding hack */
+    height: 0;
+    /* Overflow hidden */
+    overflow: hidden;
+    /* Border radius */
+    border-radius: 12px;
+    /* Cursor pointer */
+    cursor: pointer;
+    /* Background color */
+    background-color: #000;
+}
+
+/* Styling untuk media item img */
+.media-item img {
+    /* Position absolute */
+    position: absolute;
+    /* Top left 0 */
+    top: 0;
+    left: 0;
+    /* Width height full */
+    width: 100%;
+    height: 100%;
+    /* Object fit cover */
+    object-fit: cover;
+    /* Transition smooth */
+    transition: var(--transition);
+}
+
+/* Hover state untuk media item img */
+.media-item:hover img {
+    /* Transform scale */
+    transform: scale(1.1);
+    /* Opacity 0.8 */
+    opacity: 0.8;
+}
+
+/* Styling untuk play icon */
+.play-icon {
+    /* Position absolute */
+    position: absolute;
+    /* Top 50% left 50% untuk center */
+    top: 50%;
+    left: 50%;
+    /* Transform translate untuk center */
+    transform: translate(-50%, -50%);
+    /* Font size 3xl */
+    font-size: 3rem;
+    /* Color white */
+    color: white;
+    /* Opacity 0.7 */
+    opacity: 0.7;
+    /* Transition smooth */
+    transition: var(--transition);
+}
+
+/* Hover state untuk play icon */
+.media-item:hover .play-icon {
+    /* Opacity 1 */
+    opacity: 1;
+    /* Transform scale up */
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Responsive container for a single embedded video */
+.video-embed {
+    /* Maintain 16:9 aspect ratio */
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: var(--spacing-lg) 0;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    background-color: #000;
+}
+
+.video-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ========================================
+   DOKUMEN SECTION STYLES
+   ======================================== */
+
+/* Styling untuk dokumen section */
+.dokumen {
+    /* Padding vertikal */
+    padding: var(--spacing-2xl) 0;
+}
+
+/* Styling untuk dokumen h2 */
+.dokumen h2 {
+    /* Text align center */
+    text-align: center;
+    /* Margin bottom spacing */
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Styling untuk section description */
+.section-desc {
+    /* Text align center */
+    text-align: center;
+    /* Margin bottom */
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* Styling untuk upload area */
+.upload-area {
+    /* Padding */
+    padding: var(--spacing-2xl);
+    /* Border 2px dashed */
+    border: 2px dashed var(--primary-color);
+    /* Border radius */
+    border-radius: 12px;
+    /* Text align center */
+    text-align: center;
+    /* Cursor pointer */
+    cursor: pointer;
+    /* Transition smooth */
+    transition: var(--transition);
+    /* Margin bottom */
+    margin-bottom: var(--spacing-2xl);
+    /* Background color light */
+    background-color: var(--bg-light);
+}
+
+/* Hover state untuk upload area */
+.upload-area:hover {
+    /* Border color secondary */
+    border-color: var(--secondary-color);
+    /* Background color white dengan slight shadow */
+    background-color: white;
+    /* Box shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling untuk upload icon */
+.upload-icon {
+    /* Font size 3xl */
+    font-size: 3rem;
+    /* Margin bottom */
+    margin-bottom: var(--spacing-md);
+}
+
+/* Styling untuk dokumen list */
+.dokumen-list {
+    /* Margin top spacing */
+    margin-top: var(--spacing-2xl);
+}
+
+/* Styling untuk PDF viewer container */
+.proposal-viewer-container {
+    /* Margin bottom spacing */
+    margin-bottom: var(--spacing-2xl);
+    /* Background color white */
+    background-color: white;
+    /* Border radius */
+    border-radius: 12px;
+    /* Box shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Overflow auto untuk scrollbar jika PDF panjang */
+    overflow: auto;
+    /* Padding */
+    padding: var(--spacing-md);
+}
+
+/* Styling untuk files container */
+.files-container {
+    /* Display grid 2 kolom */
+    display: grid;
+    /* Grid template columns repeat 2 */
+    grid-template-columns: repeat(2, 1fr);
+    /* Gap */
+    gap: var(--spacing-lg);
+}
+
+/* Styling untuk file item */
+.file-item {
+    /* Display flex */
+    display: flex;
+    /* Align items center */
+    align-items: center;
+    /* Padding */
+    padding: var(--spacing-lg);
+    /* Background color white */
+    background-color: white;
+    /* Border */
+    border: 1px solid var(--border-color);
+    /* Border radius */
+    border-radius: 8px;
+    /* Justify content space between */
+    justify-content: space-between;
+}
+
+/* Styling untuk file info */
+.file-info {
+    /* Display flex */
+    display: flex;
+    /* Align items center */
+    align-items: center;
+    /* Flex 1 untuk grow */
+    flex: 1;
+    /* Gap */
+    gap: var(--spacing-md);
+}
+
+/* Styling untuk file icon */
+.file-icon {
+    /* Font size 2xl */
+    font-size: 2rem;
+}
+
+/* Styling untuk file name */
+.file-name {
+    /* Font weight 600 */
+    font-weight: 600;
+    /* Overflow hidden */
+    overflow: hidden;
+    /* Text overflow ellipsis */
+    text-overflow: ellipsis;
+    /* White space nowrap */
+    white-space: nowrap;
+}
+
+/* Styling untuk file actions */
+.file-actions {
+    /* Display flex */
+    display: flex;
+    /* Gap */
+    gap: var(--spacing-md);
+}
+
+/* Styling untuk file button */
+.file-btn {
+    /* Padding */
+    padding: 6px 12px;
+    /* Background color primary */
+    background-color: var(--primary-color);
+    /* Color white */
+    color: white;
+    /* Border radius */
+    border-radius: 4px;
+    /* Border none */
+    border: none;
+    /* Cursor pointer */
+    cursor: pointer;
+    /* Font size sm */
+    font-size: var(--font-size-sm);
+    /* Transition smooth */
+    transition: var(--transition);
+}
+
+/* Hover state untuk file button */
+.file-btn:hover {
+    /* Background color secondary */
+    background-color: var(--secondary-color);
+}
+
+/* Styling untuk dokumen info box */
+.dokumen-info {
+    /* Margin top spacing */
+    margin-top: var(--spacing-2xl);
+    /* Padding */
+    padding: var(--spacing-lg);
+    /* Background color light */
+    background-color: var(--bg-light);
+    /* Border left primary */
+    border-left: 4px solid var(--primary-color);
+    /* Border radius */
+    border-radius: 8px;
+}
+
+/* Styling untuk code tag di dalam dokumen info */
+.dokumen-info code {
+    /* Background color white */
+    background-color: white;
+    /* Padding */
+    padding: 2px 6px;
+    /* Border radius */
+    border-radius: 4px;
+    /* Font family monospace */
+    font-family: 'Courier New', monospace;
+    /* Font size sm */
+    font-size: var(--font-size-sm);
+}
+
+/* ========================================
+   ARTIKEL SECTION STYLES
+   ======================================== */
+
+/* Styling untuk dokumen section */
+.artikel-ilmiah {
+    /* Padding vertikal */
+    padding: var(--spacing-2xl) 0;
+}
+
+/* Styling untuk dokumen h2 */
+.artikel-ilmiah h2 {
+    /* Text align center */
+    text-align: center;
+    /* Margin bottom spacing */
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Styling untuk section description */
+.artikel-ilmiah-section-desc {
+    /* Text align center */
+    text-align: center;
+    /* Margin bottom */
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* Styling untuk PDF viewer container */
+
+.artikel-viewer-container {
+    /* Margin bottom spacing */
+    margin-bottom: var(--spacing-2xl);
+    /* Background color white */
+    background-color: white;
+    /* Border radius */
+    border-radius: 12px;
+    /* Box shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Overflow auto untuk scrollbar jika gambar lebar */
+    overflow: auto;
+    /* Padding */
+    padding: var(--spacing-md);
+    /* Display flex untuk center content */
+    display: flex;
+    /* Align items center */
+    align-items: center;
+    /* Justify content center */
+    justify-content: center;
+}
+
+/* Image styling untuk gambar di jpg-viewer */
+.artikel-viewer-image {
+    /* Max width 100% agar responsif */
+    max-width: 100%;
+    /* Height auto untuk maintain aspect ratio */
+    height: auto;
+    /* Display block */
+    display: block;
+    /* Border radius */
+    border-radius: 8px;
+}
+
+/* ========================================
+   infografis SECTION STYLES
+   ======================================== */
+
+/* Styling untuk dokumen section */
+.infografis {
+    /* Padding vertikal */
+    padding: var(--spacing-2xl) 0;
+}
+
+/* Styling untuk dokumen h2 */
+.infografis h2 {
+    /* Text align center */
+    text-align: center;
+    /* Margin bottom spacing */
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Styling untuk section description */
+.section-infografis-desc {
+    /* Text align center */
+    text-align: center;
+    /* Margin bottom */
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* Styling untuk PDF viewer container */
+
+.jpg-viewer-container {
+    /* Margin bottom spacing */
+    margin-bottom: var(--spacing-2xl);
+    /* Background color white */
+    background-color: var(--secondary-color);
+    /* Border radius */
+    border-radius: 0 0px 50px 50px;
+    /* Box shadow */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Overflow auto untuk scrollbar jika gambar lebar */
+    overflow: auto;
+    /* Padding */
+    padding: var(--spacing-md);
+    /* Display flex untuk center content */
+    display: flex;
+    /* Align items center */
+    align-items: center;
+    /* Justify content center */
+    justify-content: center;
+}
+
+/* Image styling untuk gambar di jpg-viewer */
+.jpg-viewer-image {
+    padding: 50px;
+    /* Max width 100% agar responsif */
+    max-width: 100%;
+    /* Height auto untuk maintain aspect ratio */
+    height: auto;
+    /* Display block */
+    display: block;
+    /* Border radius */
+    border-radius: 75px;
+}
+
+/* ========================================
+   CONTACT SECTION STYLES
+   ======================================== */
+
+/* Styling untuk contact section */
+.contact {
+    /* Padding vertikal */
+    padding: var(--spacing-2xl) 0;
+    /* Background color light */
+    background-color: var(--bg-light);
+}
+
+.hero-social-icon {
+    margin-top: var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+    animation: fadeIn 0.8s ease-in 0.2s backwards;
+}
+
+/* Styling for the hero icon links (class used in HTML: .style-icon-hero) */
+.info-icon {
+    padding: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    color: var(--primary-color);;
+    border-radius: 15px;
+    background: transparent;
+    transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease;
+}
+
+.info-icon svg {
+    width: 35px;
+    height: 35px;
+    fill: currentColor;
+}
+
+.info-icon:hover {
+    transform: translateY(-3px) scale(1.05);
+    opacity: 0.95;
+    background: var(--bg-light);
+}
+
+/* Styling untuk contact h2 */
+.contact h2 {
+    /* Text align center */
+    text-align: center;
+    /* Margin bottom spacing */
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* Styling untuk contact grid */
+.contact-grid {
+    /* Display grid 2 kolom */
+    display: grid;
+    /* Grid template columns 1fr 1fr */
+    grid-template-columns: 1fr 1fr;
+    /* Gap */
+    gap: var(--spacing-2xl);
+}
+
+/* Styling untuk contact form */
+.contact-form {
+    /* Background color white */
+    background-color: white;
+    /* Padding */
+    padding: var(--spacing-2xl);
+    /* Border radius */
+    border-radius: 12px;
+}
+
+/* Styling untuk form input dan textarea */
+.contact-form input,
+.contact-form textarea {
+    /* Display block */
+    display: block;
+    /* Width full */
+    width: 100%;
+    /* Padding */
+    padding: var(--spacing-md);
+    /* Margin bottom */
+    margin-bottom: var(--spacing-md);
+    /* Font family inherit */
+    font-family: inherit;
+    /* Font size inherit */
+    font-size: inherit;
+    /* Border */
+    border: 1px solid var(--border-color);
+    /* Border radius */
+    border-radius: 8px;
+    /* Transition smooth */
+    transition: var(--transition);
+}
+
+/* Focus state untuk input dan textarea */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    /* Outline none */
+    outline: none;
+    /* Border color primary */
+    border-color: var(--primary-color);
+    /* Box shadow */
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Styling untuk contact info */
+.contact-info {
+    /* Display flex */
+    display: flex;
+    /* Flex direction column */
+    flex-direction: column;
+    /* Gap */
+    gap: var(--spacing-xl);
+}
+
+/* Styling untuk info item */
+.info-item {
+    /* Display flex */
+    display: flex;
+    /* Align items flex-start */
+    align-items: flex-start;
+    /* Gap */
+    gap: var(--spacing-md);
+}
+
+/* Styling untuk icon di info item */
+.info-item .icon {
+    /* Font size 2xl */
+    font-size: 2rem;
+    /* Margin top untuk align dengan text */
+    margin-top: 4px;
+}
+
+/* Styling untuk h4 di info item */
+.info-item h4 {
+    /* Margin bottom sm */
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Styling untuk p di info item */
+.info-item p {
+    /* Margin bottom 0 */
+    margin-bottom: 0;
+}
+
+/* Styling untuk social links */
+.social-links {
+    /* Margin top spacing */
+    margin-top: var(--spacing-lg);
+}
+
+/* Styling untuk social icons */
+.social-icons {
+    /* Display flex */
+    display: flex;
+    /* Gap between icons */
+    gap: var(--spacing-md);
+    /* Margin top */
+    margin-top: var(--spacing-md);
+}
+
+/* Styling untuk social link */
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    color: var(--secondary-color);
+    background: transparent;
+    transition: background 0.18s ease, transform 0.12s ease, color 0.18s ease;
+}
+
+.social-icons a svg { width: 20px; height: 20px; }
+
+/* Hover state for SVG social icons */
+.social-icons a:hover {
+    background: rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+    color: var(--primary-color);
+}
+
+/* ========================================
+   FOOTER STYLES
+   ======================================== */
+
+/* Styling untuk footer */
+.footer {
+    /* Background color dark */
+    background-color: var(--text-color);
+    /* Color white */
+    color: white;
+    /* Padding vertikal */
+    padding: 5px;
+    /* Text align center */
+    text-align: center;
+}
+
+/* ========================================
+   MODAL STYLES (POPUP)
+   - modal kecil (tidak discroll sendiri)
+   - dokumen di dalam modal tetap discroll-able
+   ======================================== */
+
+/* Basic modal container (centered) */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 4000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Show modal */
+.modal.active {
+    display: flex;
+}
+
+/* overlay yang menutup area belakang */
+.modal .modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: -1;
+}
+
+/* Modal content (small, tidak scroll sendiri) */
+.modal .modal-content {
+    width: 520px;
+    max-width: calc(100% - 40px);
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.25);
+    position: relative;
+    /* Prevent the modal container itself from scrolling */
+    overflow: hidden;
+    max-height: 80vh; /* memastikan modal tidak meluber layar */
+}
+
+/* Smaller variant for video/content modal */
+.modal.modal-video .modal-content {
+    width: 760px;
+    max-width: calc(100% - 40px);
+}
+
+/* 16:9 document modal variant — content area tetap kecil
+   tapi document viewer di dalam memiliki area scroll sendiri */
+.modal .modal-16by9 .modal-content {
+    width: 900px;
+    max-width: calc(100% - 40px);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Close button */
+.modal .modal-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+/* PDF/Document viewer area inside modal
+   - ini yang discroll (bukan modal) */
+#pdfViewer {
+    width: 100%;
+    /* tinggi relatif ke viewport sehingga isi dokumen bisa discroll */
+    height: 60vh;
+    max-height: calc(80vh - 80px);
+    overflow: auto;
+    background: #fff;
+    border-radius: 8px;
+}
+
+/* When iframe/doc is appended, ensure it fills the viewer */
+#pdfViewer iframe,
+#pdfViewer object {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* Hide embedded PDF files inside portfolio cards only.
+   Elemen tetap ada di DOM sehingga JS masih bisa membacanya,
+   tapi visualnya tidak terlihat / tidak memengaruhi layout. */
+.portfolio-card object[data$=".pdf"],
+.portfolio-card iframe[src$=".pdf"],
+.portfolio-card embed[src$=".pdf"],
+.portfolio-card .modal-link object,
+.portfolio-card .modal-link iframe,
+.portfolio-card .modal-link embed {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+    .modal .modal-content { width: 92%; max-height: 78vh; }
+    .modal .modal-16by9 .modal-content { width: 96%; }
+    #pdfViewer { height: 60vh; max-height: 68vh; }
+}
+
+/* ========================================
+   MODAL STYLES
+   ======================================== */
+
+/* Styling untuk modal */
+.modal {
+    /* Display none default */
+    display: none;
+    /* Position fixed untuk overlay */
+    position: fixed;
+    /* Z-index tinggi untuk di atas semua */
+    z-index: 4000;
+    /* Top left 0 */
+    top: 0;
+    left: 0;
+    /* Width height full */
+    width: 100%;
+    height: 100%;
+}
+
+/* Active class untuk modal */
+.modal.active {
+    /* Display flex */
+    display: flex;
+    /* Place modal near top so navbar does not cover it */
+    align-items: flex-start;
+    /* Add padding top to clear navbar (uses fallback 72px) */
+    justify-content: center;
+    padding-top: calc(var(--navbar-height, 72px) + 12px);
+}
+
+/* Styling untuk modal overlay */
+.modal-overlay {
+    /* Position absolute */
+    position: absolute;
+    /* Top left 0 */
+    top: 0;
+    left: 0;
+    /* Width height full */
+    width: 100%;
+    height: 100%;
+    /* Background rgba black semi-transparent */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Ensure overlay is below modal content but above page */
+    z-index: 4000;
+}
+
+/* Styling untuk modal content */
+.modal-content {
+    /* Position relative */
+    position: relative;
+    /* Z-index lebih tinggi dari overlay */
+    z-index: 1001;
+    /* Background color white */
+    background-color: white;
+    /* Padding */
+    padding: var(--spacing-2xl);
+    /* Border radius */
+    border-radius: 12px;
+    /* Smaller, compact modal size to avoid covering too much */
+    max-width: 720px;
+    width: 85%;
+    /* Constrain height so it sits below navbar and remains scrollable */
+    max-height: 70vh;
+    /* Overflow auto untuk scroll jika content terlalu panjang */
+    overflow: auto;
+    /* Animation fade in */
+    animation: fadeIn 0.3s ease;
+    z-index: 4001;
+}
+
+/* Styling khusus untuk modal video */
+.modal-video {
+    /* Max width 800px */
+    max-width: 800px;
+}
+
+/* Styling khusus untuk modal document */
+.modal-doc {
+    /* Max width 900px */
+    max-width: 900px;
+}
+
+/* Modal style for 16:9 (landscape) documents like PPT */
+.modal-16by9 {
+    /* allow larger width for landscape content */
+    max-width: 1200px;
+    width: 95%;
+}
+
+.modal-16by9 .modal-frame {
+    /* Responsive 16:9 box using padding-top trick */
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 9/16 = 0.5625 -> 56.25% */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #000;
+}
+
+.modal-16by9 .modal-frame iframe,
+.modal-16by9 .modal-frame object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Styling untuk modal close button */
+.modal-close {
+    /* Position absolute */
+    position: absolute;
+    /* Top 16px right 16px */
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    /* Background none */
+    background: none;
+    /* Border none */
+    border: none;
+    /* Font size 2xl */
+    font-size: 2rem;
+    /* Cursor pointer */
+    cursor: pointer;
+    /* Color text */
+    color: var(--text-color);
+    /* Transition smooth */
+    transition: var(--transition);
+}
+
+/* Hover state untuk modal close button */
+.modal-close:hover {
+    /* Color primary */
+    color: var(--primary-color);
+    /* Transform rotate */
+    transform: rotate(90deg);
+}
+
+/* Styling untuk modal title */
+.modal-content h2 {
+    /* Margin top untuk space dari close button */
+    margin-top: 0;
+    /* Padding top untuk space */
+    padding-top: 20px;
+}
+
+/* Styling untuk modal meta */
+.modal-meta {
+    /* Display flex */
+    display: flex;
+    /* Gap */
+    gap: var(--spacing-md);
+    /* Margin bottom */
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Styling untuk category span di modal */
+.category {
+    /* Display inline block */
+    display: inline-block;
+    /* Background color primary */
+    background-color: var(--primary-color);
+    /* Color white */
+    color: white;
+    /* Padding */
+    padding: 4px 12px;
+    /* Border radius */
+    border-radius: 20px;
+    /* Font size sm */
+    font-size: var(--font-size-sm);
+}
+
+/* Styling untuk modal tech section */
+.modal-tech {
+    /* Background color light */
+    background-color: var(--bg-light);
+    /* Padding */
+    padding: var(--spacing-lg);
+    /* Border radius */
+    border-radius: 8px;
+    /* Margin bottom */
+    margin-top: var(--spacing-xl);
+}
+
+/* Styling untuk modal tech h4 */
+.modal-tech h4 {
+    /* Margin bottom */
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+/* Keyframe untuk fade in animation */
+@keyframes fadeIn {
+    /* From opacity 0 */
+    from {
+        opacity: 0;
+        /* Transform translate Y 20px */
+        transform: translateY(20px);
+    }
+    /* To opacity 1 */
+    to {
+        opacity: 1;
+        /* Transform translate Y 0 */
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - TABLET
+   ======================================== */
+
+/* Media query untuk tablet (max-width 768px) */
+@media (max-width: 768px) {
+    /* Hero h1 font size lebih kecil */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Hero buttons flex direction column */
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    /* About grid 1 kolom */
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Portfolio grid 2 kolom */
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Media grid 2 kolom */
+    .media-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Contact grid 1 kolom */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Files container 1 kolom */
+    .files-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE
+   ======================================== */
+
+/* Media query untuk mobile (max-width 480px) */
+@media (max-width: 480px) {
+    /* Ubah CSS variables untuk mobile */
+    :root {
+        --font-size-2xl: 24px;
+        --font-size-3xl: 32px;
+        --spacing-xl: 16px;
+        --spacing-2xl: 24px;
+    }
+
+    /* Navbar container flex direction column */
+    .navbar .container {
+        flex-direction: row;
+        gap: var(--spacing-md);
+    }
+
+    /* Nav menu flex wrap */
+    .nav-menu {
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: var(--spacing-lg);
+    }
+
+    /* Hero section padding */
+    .hero {
+        padding: 0px;
+    }
+
+    /* Hero h1 font size mobile */
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    /* Portfolio grid 1 kolom */
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Media grid 1 kolom */
+    .media-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Modal content width 95% */
+    .modal-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+}
