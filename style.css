@@ -2180,7 +2180,7 @@ a:hover {
     } 
 }
 
-@media (max-width: 900){
+@media (max-width: 900px){
     .reflection-of-end{
     background: var(--secondary-color);
     color: var(--primary-color);
@@ -2204,4 +2204,274 @@ a:hover {
         color: var(--bg-color);
         font-weight: var(--font-weight-medium);
     } 
+    /* ========================================
+   DOKUMEN SECTION STYLES
+   ======================================== */
+
+    /* Styling untuk dokumen section */
+    .dokumen {
+        /* Padding vertikal */
+        padding: var(--spacing-2xl) 0;
+        max-width: fit-content;
+        height: auto;
+    }
+
+    /* Styling untuk dokumen h2 */
+    .dokumen h2 {
+        /* Text align center */
+        text-align: center;
+        /* Margin bottom spacing */
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* Styling untuk section description */
+    .section-desc {
+        /* Text align center */
+        text-align: center;
+        /* Margin bottom */
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    /* Styling untuk upload area */
+    .upload-area {
+        /* Padding */
+        padding: var(--spacing-2xl);
+        /* Border 2px dashed */
+        border: 2px dashed var(--primary-color);
+        /* Border radius */
+        border-radius: 12px;
+        /* Text align center */
+        text-align: center;
+        /* Cursor pointer */
+        cursor: pointer;
+        /* Transition smooth */
+        transition: var(--transition);
+        /* Margin bottom */
+        margin-bottom: var(--spacing-2xl);
+        /* Background color light */
+        background-color: var(--bg-light);
+    }
+
+    /* Hover state untuk upload area */
+    .upload-area:hover {
+        /* Border color secondary */
+        border-color: var(--secondary-color);
+        /* Background color white dengan slight shadow */
+        background-color: white;
+        /* Box shadow */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Styling untuk upload icon */
+    .upload-icon {
+        /* Font size 3xl */
+        font-size: 3rem;
+        /* Margin bottom */
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* Styling untuk dokumen list */
+    .dokumen-list {
+        /* Margin top spacing */
+        margin-top: var(--spacing-2xl);
+    }
+
+    /* Styling untuk PDF viewer container */
+    .proposal-viewer-container {
+        /* Margin bottom spacing */
+        margin-bottom: var(--spacing-2xl);
+        /* Background color white */
+        background-color: white;
+        /* Border radius */
+        border-radius: 12px;
+        /* Box shadow */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        /* Overflow auto untuk scrollbar jika PDF panjang */
+        overflow: auto;
+        /* Padding */
+        padding: var(--spacing-md);
+    }
+
+    /* Styling untuk files container */
+    .files-container {
+        /* Display grid 2 kolom */
+        display: grid;
+        /* Grid template columns repeat 2 */
+        grid-template-columns: repeat(2, 1fr);
+        /* Gap */
+        gap: var(--spacing-lg);
+    }
+
+    /* Styling untuk file item */
+    .file-item {
+        /* Display flex */
+        display: flex;
+        /* Align items center */
+        align-items: center;
+        /* Padding */
+        padding: var(--spacing-lg);
+        /* Background color white */
+        background-color: white;
+        /* Border */
+        border: 1px solid var(--border-color);
+        /* Border radius */
+        border-radius: 8px;
+        /* Justify content space between */
+        justify-content: space-between;
+    }
+
+    /* Styling untuk file info */
+    .file-info {
+        /* Display flex */
+        display: flex;
+        /* Align items center */
+        align-items: center;
+        /* Flex 1 untuk grow */
+        flex: 1;
+        /* Gap */
+        gap: var(--spacing-md);
+    }
+
+    /* Styling untuk file icon */
+    .file-icon {
+        /* Font size 2xl */
+        font-size: 2rem;
+    }
+
+    /* Styling untuk file name */
+    .file-name {
+        /* Font weight 600 */
+        font-weight: 600;
+        /* Overflow hidden */
+        overflow: hidden;
+        /* Text overflow ellipsis */
+        text-overflow: ellipsis;
+        /* White space nowrap */
+        white-space: nowrap;
+    }
+
+    /* Styling untuk file actions */
+    .file-actions {
+        /* Display flex */
+        display: flex;
+        /* Gap */
+        gap: var(--spacing-md);
+    }
+
+    /* Styling untuk file button */
+    .file-btn {
+        /* Padding */
+        padding: 6px 12px;
+        /* Background color primary */
+        background-color: var(--primary-color);
+        /* Color white */
+        color: white;
+        /* Border radius */
+        border-radius: 4px;
+        /* Border none */
+        border: none;
+        /* Cursor pointer */
+        cursor: pointer;
+        /* Font size sm */
+        font-size: var(--font-size-sm);
+        /* Transition smooth */
+        transition: var(--transition);
+    }
+
+    /* Hover state untuk file button */
+    .file-btn:hover {
+        /* Background color secondary */
+        background-color: var(--secondary-color);
+    }
+
+    /* Styling untuk dokumen info box */
+    .dokumen-info {
+        /* Margin top spacing */
+        margin-top: var(--spacing-2xl);
+        /* Padding */
+        padding: var(--spacing-lg);
+        /* Background color light */
+        background-color: var(--bg-light);
+        /* Border left primary */
+        border-left: 4px solid var(--primary-color);
+        /* Border radius */
+        border-radius: 8px;
+    }
+
+    /* Styling untuk code tag di dalam dokumen info */
+    .dokumen-info code {
+        /* Background color white */
+        background-color: white;
+        /* Padding */
+        padding: 2px 6px;
+        /* Border radius */
+        border-radius: 4px;
+        /* Font family monospace */
+        font-family: 'Courier New', monospace;
+        /* Font size sm */
+        font-size: var(--font-size-sm);
+    }
+
+    /* ========================================
+    ARTIKEL SECTION STYLES
+    ======================================== */
+
+    /* Styling untuk dokumen section */
+    .artikel-ilmiah {
+        /* Padding vertikal */
+        padding: var(--spacing-2xl) 0;
+        max-width: fit-content;
+        height: auto;
+    }
+
+    /* Styling untuk dokumen h2 */
+    .artikel-ilmiah h2 {
+        /* Text align center */
+        text-align: center;
+        /* Margin bottom spacing */
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* Styling untuk section description */
+    .artikel-ilmiah-section-desc {
+        /* Text align center */
+        text-align: center;
+        /* Margin bottom */
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    /* Styling untuk PDF viewer container */
+
+    .artikel-viewer-container {
+        /* Margin bottom spacing */
+        margin-bottom: var(--spacing-2xl);
+        /* Background color white */
+        background-color: white;
+        /* Border radius */
+        border-radius: 12px;
+        /* Box shadow */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        /* Overflow auto untuk scrollbar jika gambar lebar */
+        overflow: auto;
+        /* Padding */
+        padding: var(--spacing-md);
+        /* Display flex untuk center content */
+        display: flex;
+        /* Align items center */
+        align-items: center;
+        /* Justify content center */
+        justify-content: center;
+    }
+
+    /* Image styling untuk gambar di jpg-viewer */
+    .artikel-viewer-image {
+        /* Max width 100% agar responsif */
+        max-width: 100%;
+        /* Height auto untuk maintain aspect ratio */
+        height: auto;
+        /* Display block */
+        display: block;
+        /* Border radius */
+        border-radius: 8px;
+    }
 }
