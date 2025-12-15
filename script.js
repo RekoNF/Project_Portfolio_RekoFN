@@ -363,18 +363,37 @@ function downloadCurrentDoc() {
 
 /* Fungsi untuk download file dari folder documents */
 function downloadFile(filePath, fileName) {
-    /* Buat element anchor untuk download */
+    /* Validasi file path */
+    if (!filePath || filePath. trim() === '') {
+        alert('❌ Error: Path file tidak ditemukan!');
+        return;
+    }
+
+    /* Jika fileName kosong/undefined, extract dari filePath */
+    if (! fileName || fileName.trim() === '') {
+        const parts = filePath.split('/');
+        fileName = parts[parts.length - 1] || 'document';
+    }
+
+    /* Create temporary link */
     const link = document.createElement('a');
-    /* Set href dengan file path */
     link.href = filePath;
-    /* Set download attribute dengan nama file yang diinginkan */
-    link.download = fileName;
-    /* Tambahkan ke DOM sebelum trigger click */
+    link. download = fileName;  // ← Sekarang sudah punya value yang benar
+    
+    /* Add to DOM */
     document.body.appendChild(link);
-    /* Trigger click untuk start download */
-    link.click();
-    /* Remove element dari DOM setelah selesai */
-    document.body.removeChild(link);
+    
+    /* Try to download */
+    try {
+        link.click();
+        console.log('✅ Download dimulai:  ' + fileName);
+    } catch (error) {
+        console.error('❌ Error saat download:', error);
+        alert('❌ Gagal download file!\n\nError: ' + error.message);
+    } finally {
+        /* Remove link from DOM */
+        document.body.removeChild(link);
+    }
 }
 
 /* =====5. FORM HANDLING===== */

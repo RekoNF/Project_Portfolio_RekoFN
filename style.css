@@ -1053,7 +1053,6 @@ a:hover {
     color: var(--text-light);
 }
 
-
 /* ========================================
    BUKTI PEMBELAJARAN SECTION
    ======================================== */
@@ -1103,6 +1102,68 @@ object.portfolio-modal .bukti-embed {
     border-radius: var(--spacing-2xl);
 }
 @media(max-width : 480px){
+    .portfolio-modal .modal-link{
+        display: none;
+    }
+    /* Styling untuk bukti button wrapper - align center */
+    .bukti-button-wrapper {
+        margin-top: var(--spacing-lg);
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-md);
+    }
+
+    /* Optional: Add extra styling for better button appearance */
+    .bukti-button-wrapper .btn {
+        min-width: 200px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-sm);
+    }
+    .bukti-button-wrapper {
+        flex-direction: column;
+    }
+    
+    .bukti-button-wrapper .btn {
+        width: 100%;
+    }
+    
+}
+
+@media(max-width : 900px){
+    .portfolio-modal .modal-link{
+        display: none;
+    }
+    /* Styling untuk bukti button wrapper - align center */
+    .bukti-button-wrapper {
+        margin-top: var(--spacing-lg);
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-md);
+    }
+
+    /* Optional: Add extra styling for better button appearance */
+    .bukti-button-wrapper .btn {
+        min-width: 200px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-sm);
+    }
+    .bukti-button-wrapper {
+        flex-direction: column;
+    }
+    
+    .bukti-button-wrapper .btn {
+        width: 100%;
+    }
+    
+}
+
+@media(max-width : 800px){
     .portfolio-modal .modal-link{
         display: none;
     }
@@ -1465,6 +1526,31 @@ object.portfolio-modal .bukti-embed {
     /* Font size sm */
     font-size: var(--font-size-sm);
 }
+@media(max-width : 480px){
+    .dokumen .proposal-viewer-container{
+        display: none;
+    }
+    .proposal-button-wrapper {
+        margin-top: var(--spacing-lg);
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-md);
+    }
+    .proposal-button-wrapper .btn{
+        min-width: 200px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-sm);
+    }
+    .proposal-button-wrapper {
+        flex-direction: column;
+    }
+    .proposal-button-wrapper .btn{
+        width: 100%;
+    }
+}
 
 /* ========================================
    ARTIKEL SECTION STYLES
@@ -1525,6 +1611,31 @@ object.portfolio-modal .bukti-embed {
     display: block;
     /* Border radius */
     border-radius: 8px;
+}
+@media(max-width : 480px){
+    .artikel-ilmiah .artikel-viewer-container{
+        display: none;
+    }
+    .artikel-button-wrapper {
+        margin-top: var(--spacing-lg);
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-md);
+    }
+    .artikel-button-wrapper .btn{
+        min-width: 200px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--spacing-sm);
+    }
+    .artikel-button-wrapper {
+        flex-direction: column;
+    }
+    .artikel-button-wrapper .btn{
+        width: 100%;
+    }
 }
 
 /* ========================================
