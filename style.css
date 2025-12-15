@@ -1055,6 +1055,56 @@ a:hover {
 
 
 /* ========================================
+   BUKTI PEMBELAJARAN SECTION
+   ======================================== */
+.portfolio-modal {
+    padding: var(--spacing-2xl);
+    margin: auto;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    justify-content: center;
+    align-items: center;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.portfolio-modal h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-color);
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+}
+
+.portfolio-modal .modal-tech {
+    background: var(--border-color);
+    border-radius: var(--spacing-2xl);
+    font-weight: var(--font-weight-bold);
+    box-shadow: #6b7280 1px 1px 5px;
+}
+
+.modal-link {
+    color: var(--primary-color);
+    font-weight: var(--font-weight-bold);
+    text-decoration: underline;
+    text-align: center;
+    margin: 50px;
+}
+
+object.portfolio-modal .bukti-embed {
+    width: 100%;
+    height: 500px;
+    border-radius: var(--spacing-2xl); }
+
+.portfolio-modal .bukti-hidden {
+    color: var(--secondary-color);
+    padding: var(--spacing-2xl);
+    background: var(--bg-light);
+    border-radius: var(--spacing-2xl);
+}
+
+
+/* ========================================
    MEDIA SECTION STYLES
    ======================================== */
 
