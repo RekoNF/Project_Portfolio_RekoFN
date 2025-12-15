@@ -614,7 +614,7 @@
         </div>
     </section>
 
-    <section class="portfolio-modal" id="projectModal">
+    <section class="portfolio-modal">
         <div class="portfolio-modal-content">
             <div class="bukti-hidden">
                 <h2 class="modal-title">Bukti pembelajaran</h2>
@@ -636,6 +636,12 @@
                             <a href="documents/Bukti Pembelajaran.pdf"></a>
                         </p>
                     </object>
+                </div>
+                <div class="bukti-button" id="docModal" role="dialog" aria-modal="true" aria-labelledby="docModalTitle" aria-hidden="true">
+                    <object data="documents/Bukti Pembelajaran.pdf" type="application/pdf" class="bukti-pdf-hp"></object>
+                    <button class="btn btn-secondary" onclick="downloadCurrentDoc('bukti-modal')">
+                        Download
+                    </button>
                 </div>
             </div>
             
@@ -891,7 +897,7 @@
             <div class="modal-overlay" onclick="closeModal('docModal')"></div>
             <div class="modal-content modal-16by9">
                 <button class="modal-close" onclick="closeModal('docModal')">✕</button>
-                <h2 id="docModalTitle">Dokumen</h2>
+                <h2 id="docModalTitle">Materi Mata Kuliah</h2>
                 <div id="pdfViewer" class="modal-frame" tabindex="0" aria-live="polite"></div>
                 <div style="margin-top:12px; text-align:right;">
                     <button class="btn btn-secondary" onclick="downloadCurrentDoc()">Download</button>

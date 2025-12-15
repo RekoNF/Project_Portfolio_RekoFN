@@ -1102,6 +1102,11 @@ object.portfolio-modal .bukti-embed {
     background: var(--bg-light);
     border-radius: var(--spacing-2xl);
 }
+@media(max-width : 480px){
+    .portfolio-modal .modal-link{
+        display: none;
+    }
+}
 
 
 /* ========================================
