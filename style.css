@@ -1123,17 +1123,14 @@ object.portfolio-modal .bukti-embed {
         justify-content: center;
         gap: var(--spacing-sm);
     }
-
-    /* Mobile responsiveness for button */
-    @media (max-width:  480px) {
-        .bukti-button-wrapper {
-            flex-direction: column;
-        }
-        
-        .bukti-button-wrapper .btn {
-            width: 100%;
-        }
+    .bukti-button-wrapper {
+        flex-direction: column;
     }
+    
+    .bukti-button-wrapper .btn {
+        width: 100%;
+    }
+    
 }
 
 
