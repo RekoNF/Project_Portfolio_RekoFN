@@ -629,18 +629,20 @@
                     - Pertemuan 9 <br>
                 </div>
                 <div class="modal-tech">Berikut dibawah ini saya tampilan dokumen drive Saya</div>
+                <!-- PDF Preview Container -->
                 <div class="modal-link">
                     <object data="documents/Bukti Pembelajaran.pdf" type="application/pdf" width="100%" height="400">
-                    <!-- Fallback jika browser tidak support object tag -->
+                        <!-- Fallback jika browser tidak support object tag -->
                         <p>Maaf, PDF tidak bisa ditampilkan. 
-                            <a href="documents/Bukti Pembelajaran.pdf"></a>
+                            <a href="documents/Bukti Pembelajaran.pdf">Download dokumen di sini</a>
                         </p>
                     </object>
                 </div>
-                <div class="bukti-button" id="docModal" role="dialog" aria-modal="true" aria-labelledby="docModalTitle" aria-hidden="true">
-                    <object data="documents/Bukti Pembelajaran.pdf" type="application/pdf" class="bukti-pdf-hp"></object>
-                    <button class="btn btn-secondary" onclick="downloadCurrentDoc('bukti-modal')">
-                        Download
+
+                <!-- Download Button Container -->
+                <div class="bukti-button-wrapper">
+                    <button class="btn btn-secondary" onclick="downloadFile('documents/Bukti Pembelajaran. pdf', 'Bukti Pembelajaran. pdf')" aria-label="Download Bukti Pembelajaran PDF">
+                        📥 Download Dokumen
                     </button>
                 </div>
             </div>
